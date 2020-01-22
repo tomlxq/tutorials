@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tom</groupId>
+    <artifactId>parent-modules</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>parent-spring-5</module>
+        <module>httpclient-simple</module>
+
+        <module>parent-java</module>
+        <module>core-java-modules/core-java-lang-syntax</module>
+        <module>algorithms-searching</module>
+        <module>core-java-modules/core-java-string-operations</module>
+        <module>core-java-modules/core-java</module>
+        <module>core-java-modules/core-java-string-operations-2</module>
+        <module>core-java-modules/core-java-string-apis</module>
+    </modules>
+    <name>parent-modules</name>
+    <packaging>pom</packaging>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.0-alpha1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+        <!--        Per the JSR 380 specification, the validation-api dependency contains the standard validation APIs:-->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.2.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>6.0.2.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.2.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${org.assertj.core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+    <dependencies>
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${org.hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>${org.hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>${org.hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-logger-api</artifactId>
+            <version>${maven-surefire-plugin.version}</version>
+            <!-- to get around bug https://github.com/junit-team/junit5/issues/801 -->
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <configuration>
+                    <executable>maven</executable>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <forkCount>3</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <excludes>
+                        <exclude>**/*IntegrationTest.java</exclude>
+                        <exclude>**/*IntTest.java</exclude>
+                        <exclude>**/*LongRunningUnitTest.java</exclude>
+                        <exclude>**/*ManualTest.java</exclude>
+                        <exclude>**/JdbcTest.java</exclude>
+                        <exclude>**/*LiveTest.java</exclude>
+                    </excludes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit-platform.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit-jupiter.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                        <version>${junit-jupiter.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.commonjava.maven.plugins</groupId>
+                <artifactId>directory-maven-plugin</artifactId>
+                <version>${directory-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>directories</id>
+                        <goals>
+                            <goal>directory-of</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <property>tutorialsproject.basedir</property>
+                            <project>
+                                <groupId>com.example</groupId>
+                                <artifactId>parent-modules</artifactId>
+                            </project>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+            </plugin>
+        </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>com.vackosar.gitflowincrementalbuilder</groupId>
+                <artifactId>gitflow-incremental-builder</artifactId>
+                <version>${gitflow-incremental-builder.version}</version>
+            </extension>
+        </extensions>
+
+    </build>
+
+    <profiles>
+
+        <profile>
+            <id>default-first</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven-surefire-plugin.version}</version>
+                        <configuration>
+                            <forkCount>3</forkCount>
+                            <reuseForks>true</reuseForks>
+                            <includes>
+                                <include>SpringContextTest</include>
+                                <include>**/*UnitTest</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/*IntegrationTest.java</exclude>
+                                <exclude>**/*IntTest.java</exclude>
+                                <exclude>**/*LongRunningUnitTest.java</exclude>
+                                <exclude>**/*ManualTest.java</exclude>
+                                <exclude>**/JdbcTest.java</exclude>
+                                <exclude>**/*LiveTest.java</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+            <modules>
+
+                <!--<module>parent-boot-1</module>
+                <module>parent-boot-2</module>
+                <module>parent-spring-4</module>
+                <module>parent-spring-5</module>
+                <module>parent-java</module>
+                <module>parent-kotlin</module>
+                &lt;!&ndash; <module>akka-http</module> &ndash;&gt; &lt;!&ndash; Unit test is failing &ndash;&gt;
+                <module>akka-streams</module>
+                <module>algorithms-genetic</module>
+                <module>algorithms-miscellaneous-1</module>
+                <module>algorithms-miscellaneous-2</module>
+                <module>algorithms-miscellaneous-3</module>
+                <module>algorithms-miscellaneous-4</module>
+                <module>algorithms-miscellaneous-5</module>
+                <module>algorithms-sorting</module>
+                <module>algorithms-sorting-2</module>
+                <module>algorithms-searching</module>
+                <module>animal-sniffer-mvn-plugin</module>
+                <module>annotations</module>
+                <module>antlr</module>
+                <module>apache-avro</module>
+                <module>apache-bval</module>
+                <module>apache-curator</module>
+                <module>apache-cxf</module>
+                <module>apache-fop</module>
+                <module>apache-geode</module>
+                <module>apache-meecrowave</module>
+                <module>apache-olingo/olingo2</module>
+                <module>apache-opennlp</module>
+                <module>apache-poi</module>
+                <module>apache-pulsar</module>
+                <module>apache-rocketmq</module>
+                <module>apache-shiro</module>
+                <module>apache-solrj</module>
+                <module>apache-spark</module>
+                <module>apache-tapestry</module>
+                <module>apache-thrift</module>
+                <module>apache-tika</module>
+                <module>apache-velocity</module>
+                <module>apache-zookeeper</module>
+                <module>asciidoctor</module>
+                <module>asm</module>
+                <module>atomix</module>
+                <module>aws</module>
+                <module>aws-lambda</module>
+                <module>axon</module>
+                <module>azure</module>
+
+                <module>bazel</module>
+                <module>blade</module>
+                <module>bootique</module>
+
+                <module>cas</module>
+                <module>cdi</module>
+                <module>checker-plugin</module>
+                <module>cloud-foundry-uaa/cf-uaa-oauth2-client</module>
+                <module>cloud-foundry-uaa/cf-uaa-oauth2-resource-server</module>
+                <module>code-generation</module>
+                <module>core-groovy</module>
+                <module>core-groovy-2</module>
+                <module>core-groovy-collections</module>
+                &lt;!&ndash; <module>core-java-modules/core-java-10</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 10. Fixing in BAEL-10841 &ndash;&gt;
+                &lt;!&ndash; <module>core-java-modules/core-java-11</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 11. Fixing in BAEL-10841 &ndash;&gt;
+                &lt;!&ndash; <module>core-java-modules/core-java-12</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 12. Fixing in BAEL-10841 &ndash;&gt;
+                <module>core-java-modules/core-java-8</module>
+                <module>core-java-modules/core-java-8-2</module>
+                <module>core-java-modules/core-java-annotations</module>
+                <module>core-java-modules/core-java-streams</module>
+                <module>core-java-modules/core-java-streams-2</module>
+                <module>core-java-modules/core-java-streams-3</module>
+                &lt;!&ndash; <module>core-java-modules/core-java-9-streams</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 9. Fixing in BAEL-10841 &ndash;&gt;
+                <module>core-java-modules/core-java-function</module>
+                <module>core-java-modules/core-java-lang-math</module>
+                &lt;!&ndash; We haven't upgraded to java 9.&ndash;&gt;
+                &lt;!&ndash;
+                <module>core-java-modules/core-java-date-operations-1</module>
+                <module>core-java-modules/core-java-datetime-conversion</module>
+                <module>core-java-modules/core-java-datetime-java8</module>
+                <module>core-java-modules/core-java-datetime-string</module>
+                <module>core-java-modules/core-java-time-measurements</module>
+                &ndash;&gt;
+                <module>core-java-modules/core-java-text</module>
+                <module>core-java-modules/core-java-lambdas</module>
+                &lt;!&ndash;<module>core-java-modules/core-java-9-jigsaw</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 9. Fixing in BAEL-10841 &ndash;&gt;
+                &lt;!&ndash;<module>core-java-modules/core-java-os</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 9.&ndash;&gt;
+                <module>core-java-modules/core-java-arrays</module>
+                <module>core-java-modules/core-java-arrays-2</module>
+                <module>core-java-modules/core-java-collections</module>
+                <module>core-java-modules/core-java-collections-2</module>
+                <module>core-java-modules/core-java-collections-3</module>
+                <module>core-java-modules/core-java-collections-list</module>
+                <module>core-java-modules/core-java-collections-list-2</module>
+                <module>core-java-modules/core-java-collections-list-3</module>
+                <module>core-java-modules/core-java-collections-array-list</module>
+                <module>core-java-modules/core-java-collections-set</module>
+                <module>core-java-modules/core-java-concurrency-basic</module>
+                <module>core-java-modules/core-java-concurrency-basic-2</module>
+                <module>core-java-modules/core-java-concurrency-collections</module>
+                <module>core-java-modules/core-java-io</module>
+                <module>core-java-modules/core-java-io-2</module>
+                <module>core-java-modules/core-java-io-apis</module>
+                <module>core-java-modules/core-java-io-conversions</module>
+                <module>core-java-modules/core-java-nio</module>
+                <module>core-java-modules/core-java-nio-2</module>
+                <module>core-java-modules/core-java-security</module>
+                <module>core-java-modules/core-java-exceptions</module>
+                <module>core-java-modules/core-java-lang-syntax</module>
+                <module>core-java-modules/core-java-lang-syntax-2</module>
+                <module>core-java-modules/core-java-lang</module>
+                <module>core-java-modules/core-java-lang-2</module>
+                <module>core-java-modules/core-java-lang-oop</module>
+                <module>core-java-modules/core-java-lang-oop-2</module>
+                <module>core-java-modules/core-java-lang-oop-3</module>
+                <module>core-java-modules/core-java-lang-oop-4</module>
+                <module>core-java-modules</module>
+                <module>core-java-modules/core-java-networking</module>
+                <module>core-java-modules/core-java-perf</module>
+                <module>core-java-modules/core-java-reflection</module>
+                <module>core-java-modules/core-java-sun</module>
+                <module>core-java-modules/core-java-string-conversions</module>
+                <module>core-java-modules/core-java-string-conversions-2</module>
+                <module>core-java-modules/core-java-string-operations</module>
+                <module>core-java-modules/core-java-string-operations-2</module>
+                <module>core-java-modules/core-java-string-algorithms</module>
+                <module>core-java-modules/core-java-string-algorithms-2</module>
+                <module>core-java-modules/core-java-string-apis</module>
+                <module>core-java-modules/core-java-strings</module>
+                <module>core-java-modules/core-java</module>
+                <module>core-java-modules/core-java-jar</module>
+                <module>core-java-modules/core-java-jvm</module>
+                <module>core-kotlin-modules</module>
+                <module>core-scala</module>
+                <module>couchbase</module>
+                <module>custom-pmd</module>
+
+                <module>dagger</module>
+                <module>data-structures</module>
+                <module>ddd</module>
+                <module>deeplearning4j</module>
+                <module>disruptor</module>
+                <module>dozer</module>
+                <module>drools</module>
+                <module>dubbo</module>
+
+                <module>ethereum</module>
+
+                <module>feign</module>
+                <module>flyway-cdi-extension</module>
+
+                <module>geotools</module>
+                <module>google-cloud</module>
+                <module>google-web-toolkit</module>
+                &lt;!&ndash; <module>gradle</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                &lt;!&ndash; <module>grails</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>graphql/graphql-java</module>
+                <module>grpc</module>
+                <module>gson</module>
+                <module>guava</module>
+                <module>guava-io</module>
+                <module>guava-collections</module>
+                <module>guava-collections-map</module>
+                <module>guava-collections-set</module>
+                <module>guava-modules</module>
+                &lt;!&ndash; <module>guest</module> &ndash;&gt; &lt;!&ndash; not to be built as its for guest articles  &ndash;&gt;
+                <module>guice</module>
+
+                <module>hazelcast</module>
+                <module>helidon</module>
+                <module>httpclient</module>
+
+                <module>hystrix</module>
+
+                <module>image-processing</module>
+                <module>immutables</module>
+
+                <module>jackson-modules</module>
+                <module>java-collections-conversions</module>
+                <module>java-collections-conversions-2</module>
+                <module>java-collections-maps</module>
+                <module>java-collections-maps-2</module>
+                <module>java-jdi</module>
+                &lt;!&ndash; <module>java-ee-8-security-api</module> &ndash;&gt; &lt;!&ndash; long running &ndash;&gt;
+                <module>java-lite</module>
+                <module>java-math</module>
+                <module>java-math-2</module> &lt;!&ndash; Added for BAEL-3506 &ndash;&gt;
+                <module>java-numbers</module>
+                <module>java-numbers-2</module>
+                <module>java-numbers-3</module>
+                <module>java-rmi</module>
+                <module>java-spi</module>
+                <module>java-vavr-stream</module>
+                <module>java-websocket</module>
+                <module>javafx</module>
+                <module>javax-servlets</module>
+                <module>javaxval</module>
+                <module>jaxb</module>
+                &lt;!&ndash; JIRA-10842
+                <module>jee-7</module> &ndash;&gt;
+                <module>jee-7-security</module>
+                <module>jee-kotlin</module>
+                <module>jersey</module>
+                <module>jgit</module>
+                <module>jgroups</module>
+                <module>jhipster-5</module>
+                <module>jib</module>
+                <module>jjwt</module>
+                <module>jmeter</module>
+                <module>jmh</module>
+                <module>jni</module>
+                <module>jooby</module>
+                <module>jsf</module>
+                <module>json</module>
+                <module>json-path</module>
+                <module>jsoup</module>
+                <module>jta</module>
+
+                &lt;!&ndash; <module>kotlin-js</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>kotlin-libraries</module>
+                <module>kotlin-libraries-2</module>
+
+                &lt;!&ndash; <module>lagom</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>libraries</module>
+                <module>libraries-2</module>
+                <module>libraries-3</module>
+                <module>libraries-data</module>
+                <module>libraries-data-2</module>
+                <module>libraries-data-db</module>
+                <module>libraries-data-io</module>
+                <module>libraries-apache-commons</module>
+                <module>libraries-apache-commons-collections</module>
+                <module>libraries-apache-commons-io</module>
+                <module>libraries-primitive</module>
+                <module>libraries-testing</module>
+                <module>libraries-security</module>
+                <module>libraries-server</module>
+                <module>libraries-http</module>
+                <module>libraries-io</module>
+                <module>linkrest</module>
+                <module>logging-modules</module>
+                <module>lombok</module>
+                <module>lucene</module>
+
+                <module>mapstruct</module>
+                &lt;!&ndash; <module>maven-all/compiler-plugin-java-9</module> &ndash;&gt; &lt;!&ndash; We haven't upgraded to java 9. &ndash;&gt;
+                <module>maven-all/maven</module>
+                <module>maven-all/maven-custom-plugin/counter-maven-plugin</module>
+                <module>maven-all/maven-war-plugin</module>
+                <module>maven-all/profiles</module>
+                <module>maven-all/versions-maven-plugin</module>
+                <module>maven-archetype</module>
+                &lt;!&ndash; <module>maven-polyglot/maven-polyglot-json-app</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>maven-polyglot/maven-polyglot-json-extension</module>
+                &lt;!&ndash; <module>maven-polyglot/maven-polyglot-yml-app</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>mesos-marathon</module>
+                <module>metrics</module>
+                &lt;!&ndash; <module>micronaut</module> &ndash;&gt; &lt;!&ndash; Fixing in BAEL-10877 &ndash;&gt;
+                <module>microprofile</module>
+                <module>msf4j</module>
+                &lt;!&ndash; <module>muleesb</module> &ndash;&gt; &lt;!&ndash; Fixing in BAEL-10878 &ndash;&gt;
+                <module>mustache</module>
+                <module>mybatis</module>
+
+                <module>ninja</module>
+                <module>netflix-modules</module>
+
+                <module>optaplanner</module>
+                <module>orika</module>
+                <module>osgi</module>
+
+                <module>patterns</module>
+                <module>pdf</module>
+                <module>performance-tests</module>
+                &lt;!&ndash; <module>play-framework</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>protobuffer</module>
+
+                <module>persistence-modules</module>
+                <module>quarkus</module>
+
+                <module>rabbitmq</module>
+                &lt;!&ndash; <module>raml</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>ratpack</module>
+                <module>reactor-core</module>
+                <module>resteasy</module>
+                <module>restx</module>
+                &lt;!&ndash; <module>rmi</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <module>rule-engines</module>
+                <module>rsocket</module>
+                <module>rxjava-core</module>
+                <module>rxjava-observables</module>
+                <module>rxjava-operators</module>
+                <module>rxjava-libraries</module>
+                <module>software-security/sql-injection-samples</module>
+
+                <module>tensorflow-java</module>
+                <module>spf4j</module>
+                <module>spring-boot-config-jpa-error</module>
+                <module>spring-boot-flowable</module>
+                <module>spring-boot-mvc-2</module>
+                <module>spring-boot-performance</module>
+                <module>spring-boot-properties</module>
+                <module>spring-mvc-basics</module>
+                <module>spring-security-modules/spring-security-kerberos</module>
+                <module>oauth2-framework-impl</module>
+
+                <module>spring-boot-nashorn</module>
+                <module>java-blockchain</module>
+                <module>machine-learning</module>
+                <module>webrtc</module>
+                <module>wildfly</module>
+                <module>quarkus-extension</module>-->
+            </modules>
+
+        </profile>
+
+
+
+    </profiles>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>${maven-jxr-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <gib.referenceBranch>refs/remotes/origin/master</gib.referenceBranch>
+        <gib.skipTestsForUpstreamModules>true</gib.skipTestsForUpstreamModules>
+        <gib.buildUpstream>false</gib.buildUpstream>
+        <gib.failOnMissingGitDir>false</gib.failOnMissingGitDir>
+        <gib.failOnError>false</gib.failOnError>
+        <gib.enabled>false</gib.enabled>
+
+        <junit.version>4.12</junit.version>
+        <org.hamcrest.version>1.3</org.hamcrest.version>
+        <mockito.version>2.21.0</mockito.version>
+
+        <!-- logging -->
+        <org.slf4j.version>1.7.21</org.slf4j.version>
+        <logback.version>1.1.7</logback.version>
+
+        <!-- plugins -->
+        <!-- can't upgrade the plugin yet; as there is an issue with 2.22 no longer running all the tests-->
+        <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+        <java.version>1.8</java.version>
+        <log4j.version>1.2.17</log4j.version>
+        <moneta.version>1.1</moneta.version>
+        <esapi.version>2.1.0.1</esapi.version>
+        <jmh-core.version>1.19</jmh-core.version>
+        <jmh-generator.version>1.19</jmh-generator.version>
+        <hamcrest-all.version>1.3</hamcrest-all.version>
+        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+        <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
+        <commons-io.version>2.5</commons-io.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <commons-cli.version>1.4</commons-cli.version>
+        <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <jstl-api.version>1.2</jstl-api.version>
+        <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
+        <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+        <jstl.version>1.2</jstl.version>
+        <jackson.version>2.9.8</jackson.version>
+        <commons-fileupload.version>1.3</commons-fileupload.version>
+        <junit-platform.version>1.2.0</junit-platform.version>
+        <junit-jupiter.version>5.2.0</junit-jupiter.version>
+        <directory-maven-plugin.version>0.3.1</directory-maven-plugin.version>
+        <maven-install-plugin.version>2.5.1</maven-install-plugin.version>
+        <custom-pmd.version>0.0.1</custom-pmd.version>
+        <gitflow-incremental-builder.version>3.8</gitflow-incremental-builder.version>
+        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <!-- <maven-pmd-plugin.version>3.9.0</maven-pmd-plugin.version> -->
+        <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
+        <lombok.version>1.16.12</lombok.version>
+        <h2.version>1.4.197</h2.version>
+        <org.assertj.core.version>3.9.0</org.assertj.core.version>
+    </properties>
+
+</project>
