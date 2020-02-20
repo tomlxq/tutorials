@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>core-java-string-operations-2</artifactId>
+    <packaging>jar</packaging>
+
     <parent>
         <groupId>com.tom</groupId>
         <artifactId>parent-java</artifactId>
@@ -21,12 +23,10 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-        <!--    <version>${guava.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-      <!--      <version>${commons-lang3.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -43,6 +43,7 @@
             <artifactId>javax.el</artifactId>
             <version>${javax.el.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
@@ -62,6 +63,11 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

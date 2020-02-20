@@ -67,7 +67,10 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+
+
     </build>
+
 
     <properties>
         <commons-lang3.version>3.9</commons-lang3.version>

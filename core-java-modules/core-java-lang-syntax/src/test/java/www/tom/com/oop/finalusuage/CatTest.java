@@ -2,7 +2,7 @@ package www.tom.com.oop.finalusuage;
 
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * 功能描述
@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CatTest {
     @Test
-public void test(){
-    Cat cat = new Cat();
-    cat.setWeight(1);
+    public void test() {
+        Cat cat = new Cat();
+        cat.setWeight(1);
 
-    assertEquals(1, cat.getWeight());
-}
+        assertEquals(1, cat.getWeight());
+    }
 }

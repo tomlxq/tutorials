@@ -17,73 +17,91 @@
         <module>core-java-modules/core-java</module>
         <module>core-java-modules/core-java-string-operations-2</module>
         <module>core-java-modules/core-java-string-apis</module>
+        <module>core-java-modules/core-java-exceptions</module>
+        <module>core-java-modules/core-java-lang-oop-2</module>
+        <module>core-java-modules/core-java-13</module>
+        <module>core-java-modules/core-java-datetime-conversion</module>
+        <module>core-java-modules/core-java-datetime-java8</module>
+        <module>javaxval</module>
+        <module>core-java-modules/core-java-concurrency-basic</module>
+        <module>core-java-modules/core-java-concurrency-basic-2</module>
+        <module>core-java-modules/core-java-concurrency-advanced</module>
+        <module>core-java-modules/core-java-concurrency-advanced-2</module>
+        <module>tool/jmh</module>
+        <module>libraries</module>
+        <module>jctools</module>
+        <module>jctools</module>
+        <module>core-java-modules/core-java-collections-list-2</module>
+        <module>core-java-modules/core-java-concurrency-collections</module>
+        <module>core-java-modules/core-java-collections-array-list</module>
+        <module>core-java-modules/java-collections-conversions</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>2.0.0-alpha1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>28.0-jre</version>
-        </dependency>
-        <!--        Per the JSR 380 specification, the validation-api dependency contains the standard validation APIs:-->
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>2.0.0.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>6.0.2.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator-annotation-processor</artifactId>
-            <version>6.0.2.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.el</groupId>
-            <artifactId>javax.el-api</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>5.2.3.RELEASE</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.10</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>2.0.0-alpha1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>28.0-jre</version>
+            </dependency>
+            <!--        Per the JSR 380 specification, the validation-api dependency contains the standard validation APIs:-->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.0.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>6.0.2.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-annotation-processor</artifactId>
+                <version>6.0.2.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>5.2.3.RELEASE</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${org.assertj.core.version}</version>
-            <scope>test</scope>
-        </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${org.assertj.core.version}</version>
+                <scope>test</scope>
+            </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.62</version>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.62</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- logging -->
         <dependency>
@@ -607,7 +625,6 @@
         </profile>
 
 
-
     </profiles>
 
     <reporting>
@@ -670,12 +687,12 @@
         <maven-install-plugin.version>2.5.1</maven-install-plugin.version>
         <custom-pmd.version>0.0.1</custom-pmd.version>
         <gitflow-incremental-builder.version>3.8</gitflow-incremental-builder.version>
-        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <!-- <maven-pmd-plugin.version>3.9.0</maven-pmd-plugin.version> -->
         <maven-pmd-plugin.version>3.8</maven-pmd-plugin.version>
-        <lombok.version>1.16.12</lombok.version>
+        <lombok.version>1.18.10</lombok.version>
         <h2.version>1.4.197</h2.version>
-        <org.assertj.core.version>3.9.0</org.assertj.core.version>
+        <org.assertj.core.version>3.10.0</org.assertj.core.version>
     </properties>
 
 </project>
