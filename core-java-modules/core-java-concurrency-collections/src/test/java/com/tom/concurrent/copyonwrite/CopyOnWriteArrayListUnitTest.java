@@ -1,4 +1,4 @@
-package com.com.concurrent.copyonwrite;
+package com.tom.concurrent.copyonwrite;
 
 
 import org.junit.Test;

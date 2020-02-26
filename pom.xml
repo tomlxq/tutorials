@@ -35,6 +35,12 @@
         <module>core-java-modules/core-java-concurrency-collections</module>
         <module>core-java-modules/core-java-collections-array-list</module>
         <module>core-java-modules/java-collections-conversions</module>
+        <module>core-java-modules/core-java-collections-list</module>
+        <module>core-java-modules/guava-collections</module>
+        <module>core-java-modules/core-java-collections-set</module>
+        <module>core-java-modules/java-collections-maps-2</module>
+        <module>core-java-modules/java-collections-maps</module>
+        <module>core-java-modules/core-java-collections</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>
