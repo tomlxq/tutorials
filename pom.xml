@@ -41,6 +41,8 @@
         <module>core-java-modules/java-collections-maps-2</module>
         <module>core-java-modules/java-collections-maps</module>
         <module>core-java-modules/core-java-collections</module>
+        <module>core-java-modules/core-java-9</module>
+        <module>core-java-modules/guava-collections-map</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>
