@@ -30,7 +30,6 @@
         <module>tool/jmh</module>
         <module>libraries</module>
         <module>jctools</module>
-        <module>jctools</module>
         <module>core-java-modules/core-java-collections-list-2</module>
         <module>core-java-modules/core-java-concurrency-collections</module>
         <module>core-java-modules/core-java-collections-array-list</module>
@@ -43,6 +42,12 @@
         <module>core-java-modules/core-java-collections</module>
         <module>core-java-modules/core-java-9</module>
         <module>core-java-modules/guava-collections-map</module>
+        <module>core-java-modules/core-java-streams-3</module>
+        <module>core-java-modules/core-java-collections-2</module>
+        <module>core-java-modules/guava-2</module>
+        <module>core-java-modules/core-java-streams-2</module>
+        <module>core-java-modules/core-java-9-improvements</module>
+        <module>core-java-modules/libraries-apache-commons-collections</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>

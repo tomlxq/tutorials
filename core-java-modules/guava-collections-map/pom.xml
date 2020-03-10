@@ -5,6 +5,14 @@
     <groupId>com.baeldung.guava</groupId>
     <artifactId>guava-collections-map</artifactId>
     <version>${project.version}</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <name>guava-collections-map</name>
 
     <parent>
