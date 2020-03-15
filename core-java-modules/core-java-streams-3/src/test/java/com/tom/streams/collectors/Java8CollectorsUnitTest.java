@@ -56,7 +56,8 @@ public class Java8CollectorsUnitTest {
     }
 
     @Test
-    public void givenContainsDuplicateElements_whenCollectingToSet_shouldAddDuplicateElementsOnlyOnce() throws Exception {
+    public void givenContainsDuplicateElements_whenCollectingToSet_shouldAddDuplicateElementsOnlyOnce() {
+        final List<String> listWithDuplicates = Arrays.asList("a", "bb", "c", "d", "bb");
         final Set<String> result = listWithDuplicates.stream().collect(toSet());
 
         assertThat(result).hasSize(4);
@@ -75,6 +76,9 @@ public class Java8CollectorsUnitTest {
             givenList.stream().collect(toCollection(ImmutableList::of));
         }).isInstanceOf(UnsupportedOperationException.class);
 
+        List<String> result = givenList.stream()
+                .collect(collectingAndThen(toList(), ImmutableList::copyOf));
+        assertThat(result).containsAll(givenList).isInstanceOf(ImmutableList.class);
     }
 
     @Test

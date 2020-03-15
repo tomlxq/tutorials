@@ -28,8 +28,9 @@
         <module>core-java-modules/core-java-concurrency-advanced</module>
         <module>core-java-modules/core-java-concurrency-advanced-2</module>
         <module>tool/jmh</module>
-        <module>libraries</module>
-        <module>jctools</module>
+        <module>libraries/jctools</module>
+        <module>libraries/eclipsecollections</module>
+        <!--<module>jctools</module>-->
         <module>core-java-modules/core-java-collections-list-2</module>
         <module>core-java-modules/core-java-concurrency-collections</module>
         <module>core-java-modules/core-java-collections-array-list</module>
@@ -48,6 +49,13 @@
         <module>core-java-modules/core-java-streams-2</module>
         <module>core-java-modules/core-java-9-improvements</module>
         <module>core-java-modules/libraries-apache-commons-collections</module>
+        <module>libraries/eclipsecollections</module>
+        <module>pcollections</module>
+        <module>data-structures</module>
+        <module>core-java-modules/core-java-8</module>
+        <module>core-java-modules/core-java-lambdas</module>
+        <module>core-java-modules/core-java-12</module>
+        <module>libraries/parallel-collectors</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>

@@ -4,6 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>parent-java</artifactId>
     <version>${project.parent.version}</version>
+    <modules>
+        <module>../libraries/pcollections</module>
+    </modules>
     <name>parent-java</name>
     <packaging>pom</packaging>
     <description>Parent for all java modules</description>

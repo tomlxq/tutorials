@@ -1,0 +1,62 @@
+package com.tom.java8.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Human {
+    private String name;
+    private int age;
+
+    // compare
+    public static int compareByNameThenAge(final Human lhs, final Human rhs) {
+        if (lhs.name.equals(rhs.name)) {
+            return lhs.age - rhs.age;
+        } else {
+            return lhs.name.compareTo(rhs.name);
+        }
+    }
+
+    //
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + age;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Human other = (Human) obj;
+        if (age != other.age) {
+            return false;
+        }
+        if (name == null) {
+            if (other.name != null) {
+                return false;
+            }
+        } else if (!name.equals(other.name)) {
+            return false;
+        }
+        return true;
+    }
+}
