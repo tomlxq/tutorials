@@ -17,7 +17,7 @@ public class MethodReferenceUnitTest {
 
     @Test
     public void referenceToStaticMethod() {
-        List<String> messages = Arrays.asList("Hello", "Baeldung", "readers!");
+        List<String> messages = Arrays.asList("Hello", "guava", "readers!");
         messages.forEach(word -> StringUtils.capitalize(word));
         messages.forEach(StringUtils::capitalize);
     }

@@ -516,7 +516,7 @@
                     </excludes>
                     <archive>
                         <manifest>
-                            <mainClass>com.baeldung.neuroph.NeurophXOR</mainClass>
+                            <mainClass>com.guava.neuroph.NeurophXOR</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

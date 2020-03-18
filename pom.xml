@@ -56,6 +56,10 @@
         <module>core-java-modules/core-java-lambdas</module>
         <module>core-java-modules/core-java-12</module>
         <module>libraries/parallel-collectors</module>
+        <module>core-java-modules/core-java-optional</module>
+        <module>core-java-modules/core-java-streams</module>
+        <module>core-java-modules/core-java-string-conversions</module>
+        <module>core-java-modules/core-java-function</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>
@@ -714,6 +718,7 @@
         <lombok.version>1.18.10</lombok.version>
         <h2.version>1.4.197</h2.version>
         <org.assertj.core.version>3.10.0</org.assertj.core.version>
+        <hamcrest.version>2.1</hamcrest.version>
     </properties>
 
 </project>

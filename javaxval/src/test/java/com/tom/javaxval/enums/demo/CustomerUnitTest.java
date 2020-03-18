@@ -8,20 +8,17 @@
  */
 package com.tom.javaxval.enums.demo;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.Set;
-import java.util.function.Predicate;
+import com.tom.javaxval.LocaleAwareUnitTest;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
+import java.util.Set;
+import java.util.function.Predicate;
 
-import com.tom.javaxval.LocaleAwareUnitTest;
-import com.tom.javaxval.enums.demo.Customer;
-import com.tom.javaxval.enums.demo.CustomerType;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CustomerUnitTest extends LocaleAwareUnitTest {
 
@@ -60,7 +57,7 @@ public class CustomerUnitTest extends LocaleAwareUnitTest {
         Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
         assertThat(violations.size()).isEqualTo(3);
 
-        assertThat(violations).anyMatch(havingPropertyPath("customerTypeString").and(havingMessage("must be any of enum class com.baeldung.javaxval.enums.demo.CustomerType")));
+        assertThat(violations).anyMatch(havingPropertyPath("customerTypeString").and(havingMessage("must be any of enum class com.guava.javaxval.enums.demo.CustomerType")));
         assertThat(violations).anyMatch(havingPropertyPath("customerTypeOfSubset").and(havingMessage("must be any of [NEW, OLD]")));
         assertThat(violations).anyMatch(havingPropertyPath("customerTypeMatchesPattern").and(havingMessage("must match \"NEW|DEFAULT\"")));
     }

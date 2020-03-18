@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.baeldung.BenchmarkRunner</mainClass>
+                            <mainClass>com.guava.BenchmarkRunner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
