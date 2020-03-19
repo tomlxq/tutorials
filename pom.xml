@@ -50,7 +50,7 @@
         <module>core-java-modules/core-java-9-improvements</module>
         <module>core-java-modules/libraries-apache-commons-collections</module>
         <module>libraries/eclipsecollections</module>
-        <module>pcollections</module>
+        <module>libraries/pcollections</module>
         <module>data-structures</module>
         <module>core-java-modules/core-java-8</module>
         <module>core-java-modules/core-java-lambdas</module>
@@ -60,6 +60,9 @@
         <module>core-java-modules/core-java-streams</module>
         <module>core-java-modules/core-java-string-conversions</module>
         <module>core-java-modules/core-java-function</module>
+        <module>libraries/java-vavr-stream</module>
+        <module>persistence-modules/spring-data-jpa</module>
+        <module>parent-boot-2</module>
     </modules>
     <name>parent-modules</name>
     <packaging>pom</packaging>
