@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
- * @author baeldung
+ * @author tom
  */
 public class VavrSampler {
 

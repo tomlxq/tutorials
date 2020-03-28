@@ -23,4 +23,5 @@ public class FileManagerTest {
     public void getFirstLine2() throws IncorrectFileNameException{
         FileManager.getFirstLine("wrongFileName.csv");
     }
+
 }

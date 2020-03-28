@@ -9,11 +9,11 @@
     <name>parent-boot-2</name>
     <packaging>pom</packaging>
     <description>Parent for all Spring Boot 2 modules</description>
-
     <parent>
         <groupId>com.tom</groupId>
         <artifactId>parent-modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
     </parent>
 
     <dependencyManagement>
@@ -47,6 +47,7 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot.version}</version>
                     <configuration>
+                        <!--suppress UnresolvedMavenProperty -->
                         <mainClass>${start-class}</mainClass>
                         <!-- this is necessary as we're not using the Boot parent -->
                     </configuration>
@@ -55,7 +56,7 @@
         </pluginManagement>
     </build>
 
-    <profiles>
+    <!--<profiles>
         <profile>
             <id>thin-jar</id>
             <build>
@@ -64,7 +65,7 @@
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <dependencies>
-                            <!-- The following enables the "thin jar" deployment option. -->
+                            &lt;!&ndash; The following enables the "thin jar" deployment option. &ndash;&gt;
                             <dependency>
                                 <groupId>org.springframework.boot.experimental</groupId>
                                 <artifactId>spring-boot-thin-layout</artifactId>
@@ -76,11 +77,11 @@
             </build>
         </profile>
     </profiles>
-
+-->
     <properties>
         <rest-assured.version>3.3.0</rest-assured.version>
         <!-- plugins -->
-        <thin.version>1.0.22.RELEASE</thin.version>
+        <thin.version>1.0.9.RELEASE</thin.version>
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
     </properties>
 

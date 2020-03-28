@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<form action="#" method="post" th:action="@{/message/processForm}">
+    Message: <input id="message" name="message" type="text" value="message"/>
+    <input type="submit"/>
+</form>
+
+<span id="received" th:text="${message}"></span>
+</body>
+</html>
