@@ -1,5 +1,7 @@
 package com.tom.spring;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -21,8 +23,6 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.resource.ResourceUrlEncodingFilter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-
-import java.util.Locale;
 
 @Configuration
 @ComponentScan(basePackages = {"com.tom.web.controller", "com.tom.persistence.service", "com.tom.persistence.dao"})
