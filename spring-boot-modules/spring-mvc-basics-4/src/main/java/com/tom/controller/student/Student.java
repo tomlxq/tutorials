@@ -1,4 +1,4 @@
-package com.tom.controller.student;
+package com.tom.web.student;
 
 public class Student {
     private String name;

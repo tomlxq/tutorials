@@ -7,9 +7,7 @@
     <artifactId>parent-modules</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>spring-mvc-history</module>
-        <module>spring-mvc-modules/spring-mvc-history</module>
-        <module>spring-mvc-modules/spring-mvc-introduce</module>
+        <module>spring-security-modules/spring-security-mvc-custom</module>
     </modules>
 
 
@@ -38,7 +36,11 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${org.slf4j.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
         <!-- test -->
         <dependency>
             <groupId>junit</groupId>
@@ -106,12 +108,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>2.0.0-alpha1</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.9</version>
         </dependency>
     </dependencies>
 
@@ -204,7 +207,7 @@
                         </execution>
                     </executions>
                 </plugin>-->
-            <plugin>
+            <!--<plugin>
                 <groupId>org.commonjava.maven.plugins</groupId>
                 <artifactId>directory-maven-plugin</artifactId>
                 <version>${directory-maven-plugin.version}</version>
@@ -224,7 +227,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <!-- <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-install-plugin</artifactId>
@@ -264,55 +267,55 @@
             <plugins>
                 <!--This plugin's configuration is used to store Eclipse m2e settings
                     only. It has no influence on the Maven build itself. -->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.commonjava.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            directory-maven-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [0.3.1,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>directory-of</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-                                            org.apache.maven.plugins
-                                        </groupId>
-                                        <artifactId>
-                                            maven-install-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [2.5.1,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>install-file</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
+                <!--  <plugin>
+                      <groupId>org.eclipse.m2e</groupId>
+                      <artifactId>lifecycle-mapping</artifactId>
+                      <version>1.0.0</version>
+                      <configuration>
+                          <lifecycleMappingMetadata>
+                              <pluginExecutions>
+                                  <pluginExecution>
+                                      <pluginExecutionFilter>
+                                          <groupId>
+                                              org.commonjava.maven.plugins
+                                          </groupId>
+                                          <artifactId>
+                                              directory-maven-plugin
+                                          </artifactId>
+                                          <versionRange>
+                                              [0.3.1,)
+                                          </versionRange>
+                                          <goals>
+                                              <goal>directory-of</goal>
+                                          </goals>
+                                      </pluginExecutionFilter>
+                                      <action>
+                                          <ignore></ignore>
+                                      </action>
+                                  </pluginExecution>
+                                  <pluginExecution>
+                                      <pluginExecutionFilter>
+                                          <groupId>
+                                              org.apache.maven.plugins
+                                          </groupId>
+                                          <artifactId>
+                                              maven-install-plugin
+                                          </artifactId>
+                                          <versionRange>
+                                              [2.5.1,)
+                                          </versionRange>
+                                          <goals>
+                                              <goal>install-file</goal>
+                                          </goals>
+                                      </pluginExecutionFilter>
+                                      <action>
+                                          <ignore></ignore>
+                                      </action>
+                                  </pluginExecution>
+                              </pluginExecutions>
+                          </lifecycleMappingMetadata>
+                      </configuration>
+                  </plugin>-->
             </plugins>
         </pluginManagement>
     </build>
@@ -359,13 +362,11 @@
                 <module>parent-spring-5</module>
                 <module>parent-java</module>
                 <module>parent-kotlin</module>
-                <module>spring-boot-modules/spring-mvc-basics-4</module>
+
                 <module>core-java-modules/core-java-collections</module>
 
-                <module>spring-boot-modules/spring-boot-mvc</module>
-                <module>spring-boot-modules/spring-mvc-kotlin</module>
+                <module>spring-boot-modules/spring-mvc-basics</module>
 
-                <module>spring-mvc-modules/spring-static-resources</module>
 
             </modules>
 
@@ -1414,7 +1415,7 @@
         <byte-buddy.version>1.10.5</byte-buddy.version>
 
         <!-- logging -->
-        <org.slf4j.version>1.7.30</org.slf4j.version>
+        <org.slf4j.version>2.0.0-alpha1</org.slf4j.version>
         <logback.version>1.2.3</logback.version>
 
         <!-- plugins -->

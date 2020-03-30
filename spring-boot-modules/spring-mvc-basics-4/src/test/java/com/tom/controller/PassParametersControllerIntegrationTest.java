@@ -1,4 +1,4 @@
-package com.tom.controller;
+package com.tom.web;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,7 +15,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * This is the test class for {@link com.tom.controller.controller.PassParametersController} class.
+ * This is the test class for {@link com.tom.web.controller.PassParametersController} class.
  * 09/09/2017
  *
  * @author Ahmet Cetin

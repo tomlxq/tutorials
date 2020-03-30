@@ -1,6 +1,6 @@
-package com.tom.controller.controller;
+package com.tom.web.controller;
 
-import com.tom.controller.student.Student;
+import com.tom.web.student.Student;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

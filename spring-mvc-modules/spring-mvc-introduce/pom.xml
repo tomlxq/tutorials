@@ -11,13 +11,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <tomcat8-maven-plugin.version>3.0-r1655215</tomcat8-maven-plugin.version>
         <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
-
     </properties>
-
     <dependencies>
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -53,13 +49,17 @@
             <version>1.2.62</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <finalName>spring-mvc-introduce</finalName>
         <pluginManagement>
             <plugins>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
@@ -68,12 +68,8 @@
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
-
-
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
-
 </project>

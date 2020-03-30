@@ -1,4 +1,4 @@
-package com.tom.controller.config;
+package com.tom.web.config;
 
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

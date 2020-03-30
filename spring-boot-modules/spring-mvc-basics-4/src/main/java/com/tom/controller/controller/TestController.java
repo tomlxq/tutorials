@@ -2,7 +2,7 @@
 /**
  * @author Prashant Dutta
  */
-package com.tom.controller.controller;
+package com.tom.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

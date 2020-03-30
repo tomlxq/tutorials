@@ -304,7 +304,7 @@
         <httpcore.version>4.4.11</httpcore.version>
         <httpclient.version>4.5.8</httpclient.version> <!-- 4.3.6 --> <!-- 4.4-beta1 -->
         <!-- maven plugins -->
-        <cargo-maven2-plugin.version>1.6.1</cargo-maven2-plugin.version>
+        <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>
     </properties>
 
 </project>

@@ -1,6 +1,6 @@
 package com.tom.optionalpathvars;
 
-import com.tom.controller.config.WebConfig;
+import com.tom.web.config.WebConfig;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

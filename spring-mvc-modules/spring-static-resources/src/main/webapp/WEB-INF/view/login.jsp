@@ -53,7 +53,7 @@
         </tr>
         <tr>
             <td><input name="submit" type="submit" value=
-                    <spring:message code="label.form.submit"></spring:message>/></td>
+            <spring:message code="label.form.submit"></spring:message>/></td>
         </tr>
     </table>
 

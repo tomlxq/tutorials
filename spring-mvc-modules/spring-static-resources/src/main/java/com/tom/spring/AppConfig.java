@@ -9,7 +9,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @ComponentScan(basePackages = {"com.tom.persistence.service", "com.tom.persistence.dao"})
-@Import({MvcConfig.class, SecSecurityConfig.class})
+@Import({ MvcConfig.class, SecSecurityConfig.class })
 @PropertySource("classpath:application.properties")
 public class AppConfig {
 

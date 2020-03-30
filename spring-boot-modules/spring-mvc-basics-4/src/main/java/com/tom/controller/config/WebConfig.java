@@ -1,4 +1,4 @@
-package com.tom.controller.config;
+package com.tom.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

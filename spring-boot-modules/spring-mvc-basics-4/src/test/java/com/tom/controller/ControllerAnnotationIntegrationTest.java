@@ -1,8 +1,8 @@
-package com.tom.controller;
+package com.tom.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tom.controller.config.WebConfig;
-import com.tom.controller.student.Student;
+import com.tom.web.config.WebConfig;
+import com.tom.web.student.Student;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
