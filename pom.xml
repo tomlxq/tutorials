@@ -6,9 +6,9 @@
     <groupId>com.tom</groupId>
     <artifactId>parent-modules</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-security-modules/spring-security-mvc-custom</module>
-    </modules>
+<modules>
+    <module>spring-mvc-modules/spring-mvc-annotation</module>
+</modules>
 
 
     <name>parent-modules</name>
@@ -365,13 +365,13 @@
 
                 <module>core-java-modules/core-java-collections</module>
 
-                <module>spring-boot-modules/spring-mvc-basics</module>
+                <!--   <module>spring-boot-modules/spring-mvc-basics</module>-->
 
 
             </modules>
 
         </profile>
-        <profile>
+        <!--<profile>
             <id>default-first</id>
             <build>
                 <plugins>
@@ -467,7 +467,7 @@
                 <module>cas</module>
                 <module>cdi</module>
                 <module>checker-plugin</module>
-                <!-- <module>clojure</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>clojure</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>cloud-foundry-uaa</module>
                 <module>code-generation</module>
 
@@ -484,7 +484,7 @@
                 <module>dagger</module>
                 <module>data-structures</module>
                 <module>ddd</module>
-                <!-- <module>ddd-modules</module>--> <!-- we haven't upgraded to Java 9 -->
+                &lt;!&ndash; <module>ddd-modules</module>&ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 9 &ndash;&gt;
                 <module>deeplearning4j</module>
                 <module>disruptor</module>
                 <module>dozer</module>
@@ -500,9 +500,9 @@
                 <module>geotools</module>
                 <module>google-cloud</module>
                 <module>google-web-toolkit</module>
-                <!-- <module>gradle</module> --> <!-- Not a maven project -->
-                <!-- <module>gradle-5</module> --> <!-- Not a maven project -->
-                <!-- <module>grails</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>gradle</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                &lt;!&ndash; <module>gradle-5</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                &lt;!&ndash; <module>grails</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>graphql/graphql-java</module>
                 <module>grpc</module>
                 <module>gson</module>
@@ -512,7 +512,7 @@
                 <module>guava-collections-set</module>
                 <module>guava-io</module>
                 <module>guava-modules</module>
-                <!-- <module>guest</module> --> <!-- not to be built as its for guest articles  -->
+                &lt;!&ndash; <module>guest</module> &ndash;&gt; &lt;!&ndash; not to be built as its for guest articles  &ndash;&gt;
                 <module>guice</module>
 
                 <module>hazelcast</module>
@@ -532,13 +532,13 @@
                 <module>java-collections-conversions-2</module>
                 <module>java-collections-maps</module>
                 <module>java-collections-maps-2</module>
-                <!-- <module>java-ee-8-security-api</module> --> <!-- long running -->
+                &lt;!&ndash; <module>java-ee-8-security-api</module> &ndash;&gt; &lt;!&ndash; long running &ndash;&gt;
 
                 <module>javafx</module>
                 <module>java-jdi</module>
                 <module>java-lite</module>
                 <module>java-math</module>
-                <module>java-math-2</module> <!-- Added for BAEL-3506 -->
+                <module>java-math-2</module> &lt;!&ndash; Added for BAEL-3506 &ndash;&gt;
                 <module>java-numbers</module>
                 <module>java-numbers-2</module>
                 <module>java-numbers-3</module>
@@ -569,12 +569,12 @@
                 <module>jsoup</module>
                 <module>jta</module>
 
-                <!-- <module>kotlin-js</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>kotlin-js</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>kotlin-libraries</module>
                 <module>kotlin-libraries-2</module>
                 <module>kotlin-quasar</module>
 
-                <!-- <module>lagom</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>lagom</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>libraries-2</module>
                 <module>libraries-3</module>
                 <module>libraries-apache-commons</module>
@@ -601,7 +601,7 @@
 
                 <module>maven-all</module>
                 <module>maven-archetype</module>
-                <!-- <module>maven-java-11</module> --> <!-- we haven't upgraded to Java 11 -->
+                &lt;!&ndash; <module>maven-java-11</module> &ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 11 &ndash;&gt;
                 <module>maven-polyglot</module>
 
                 <module>mesos-marathon</module>
@@ -609,7 +609,7 @@
                 <module>micronaut</module>
                 <module>microprofile</module>
                 <module>msf4j</module>
-                <!-- <module>muleesb</module> --> <!-- Module broken, fixing in http://team.tom.com/browse/BAEL-20604 -->
+                &lt;!&ndash; <module>muleesb</module> &ndash;&gt; &lt;!&ndash; Module broken, fixing in http://team.tom.com/browse/BAEL-20604 &ndash;&gt;
                 <module>mustache</module>
                 <module>mybatis</module>
 
@@ -626,14 +626,14 @@
                 <module>pdf</module>
                 <module>performance-tests</module>
                 <module>persistence-modules</module>
-                <!-- <module>play-framework</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>play-framework</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>protobuffer</module>
 
                 <module>quarkus</module>
                 <module>quarkus-extension</module>
 
                 <module>rabbitmq</module>
-                <!-- <module>raml</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>raml</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>ratpack</module>
                 <module>reactor-core</module>
                 <module>resteasy</module>
@@ -721,7 +721,7 @@
 
                 <module>spring-cloud</module>
                 <module>spring-cloud-bus</module>
-                <!-- <module>spring-cloud-cli</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>spring-cloud-cli</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>spring-cloud-data-flow</module>
 
                 <module>spring-core</module>
@@ -811,7 +811,7 @@
                 <module>spring-vault</module>
                 <module>spring-vertx</module>
 
-                <module>spring-webflux-amqp</module> <!-- long -->
+                <module>spring-webflux-amqp</module> &lt;!&ndash; long &ndash;&gt;
                 <module>spring-websockets</module>
 
                 <module>static-analysis</module>
@@ -825,7 +825,7 @@
                 <module>twilio</module>
                 <module>twitter4j</module>
 
-                <!-- <module>undertow</module> --> <!-- 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) -->
+                &lt;!&ndash; <module>undertow</module> &ndash;&gt; &lt;!&ndash; 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) &ndash;&gt;
 
                 <module>vertx</module>
                 <module>vertx-and-rxjava</module>
@@ -883,7 +883,7 @@
                 <module>jhipster</module>
                 <module>jws</module>
 
-                <module>libraries</module> <!-- very long running -->
+                <module>libraries</module> &lt;!&ndash; very long running &ndash;&gt;
 
                 <module>vaadin</module>
                 <module>vavr</module>
@@ -979,7 +979,7 @@
                 <module>cas</module>
                 <module>cdi</module>
                 <module>checker-plugin</module>
-                <!-- <module>clojure</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>clojure</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>cloud-foundry-uaa</module>
                 <module>code-generation</module>
 
@@ -996,7 +996,7 @@
                 <module>dagger</module>
                 <module>data-structures</module>
                 <module>ddd</module>
-                <!-- <module>ddd-modules</module>--> <!-- we haven't upgraded to Java 9 -->
+                &lt;!&ndash; <module>ddd-modules</module>&ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 9 &ndash;&gt;
                 <module>deeplearning4j</module>
                 <module>disruptor</module>
                 <module>dozer</module>
@@ -1012,9 +1012,9 @@
                 <module>geotools</module>
                 <module>google-cloud</module>
                 <module>google-web-toolkit</module>
-                <!-- <module>gradle</module> --> <!-- Not a maven project -->
-                <!-- <module>gradle-5</module> --> <!-- Not a maven project -->
-                <!-- <module>grails</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>gradle</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                &lt;!&ndash; <module>gradle-5</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                &lt;!&ndash; <module>grails</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>graphql/graphql-java</module>
                 <module>grpc</module>
                 <module>gson</module>
@@ -1024,7 +1024,7 @@
                 <module>guava-collections-set</module>
                 <module>guava-io</module>
                 <module>guava-modules</module>
-                <!-- <module>guest</module> --> <!-- not to be built as its for guest articles  -->
+                &lt;!&ndash; <module>guest</module> &ndash;&gt; &lt;!&ndash; not to be built as its for guest articles  &ndash;&gt;
                 <module>guice</module>
 
                 <module>hazelcast</module>
@@ -1044,13 +1044,13 @@
                 <module>java-collections-conversions-2</module>
                 <module>java-collections-maps</module>
                 <module>java-collections-maps-2</module>
-                <!-- <module>java-ee-8-security-api</module> --> <!-- long running -->
+                &lt;!&ndash; <module>java-ee-8-security-api</module> &ndash;&gt; &lt;!&ndash; long running &ndash;&gt;
 
                 <module>javafx</module>
                 <module>java-jdi</module>
                 <module>java-lite</module>
                 <module>java-math</module>
-                <module>java-math-2</module> <!-- Added for BAEL-3506 -->
+                <module>java-math-2</module> &lt;!&ndash; Added for BAEL-3506 &ndash;&gt;
                 <module>java-numbers</module>
                 <module>java-numbers-2</module>
                 <module>java-numbers-3</module>
@@ -1080,12 +1080,12 @@
                 <module>jsoup</module>
                 <module>jta</module>
 
-                <!-- <module>kotlin-js</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>kotlin-js</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>kotlin-libraries</module>
                 <module>kotlin-libraries-2</module>
                 <module>kotlin-quasar</module>
 
-                <!-- <module>lagom</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>lagom</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>libraries-2</module>
                 <module>libraries-3</module>
                 <module>libraries-apache-commons</module>
@@ -1112,7 +1112,7 @@
 
                 <module>maven-all</module>
                 <module>maven-archetype</module>
-                <!-- <module>maven-java-11</module> --> <!-- we haven't upgraded to Java 11 -->
+                &lt;!&ndash; <module>maven-java-11</module> &ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 11 &ndash;&gt;
                 <module>maven-polyglot</module>
 
                 <module>mesos-marathon</module>
@@ -1120,7 +1120,7 @@
                 <module>micronaut</module>
                 <module>microprofile</module>
                 <module>msf4j</module>
-                <!-- <module>muleesb</module> --> <!-- Module broken, fixing in http://team.tom.com/browse/BAEL-20604 -->
+                &lt;!&ndash; <module>muleesb</module> &ndash;&gt; &lt;!&ndash; Module broken, fixing in http://team.tom.com/browse/BAEL-20604 &ndash;&gt;
                 <module>mustache</module>
                 <module>mybatis</module>
 
@@ -1137,14 +1137,14 @@
                 <module>pdf</module>
                 <module>performance-tests</module>
                 <module>persistence-modules</module>
-                <!-- <module>play-framework</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>play-framework</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>protobuffer</module>
 
                 <module>quarkus</module>
                 <module>quarkus-extension</module>
 
                 <module>rabbitmq</module>
-                <!-- <module>raml</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>raml</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>ratpack</module>
                 <module>reactor-core</module>
                 <module>resteasy</module>
@@ -1225,7 +1225,7 @@
 
                 <module>spring-cloud</module>
                 <module>spring-cloud-bus</module>
-                <!-- <module>spring-cloud-cli</module> --> <!-- Not a maven project -->
+                &lt;!&ndash; <module>spring-cloud-cli</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
                 <module>spring-cloud-data-flow</module>
 
                 <module>spring-core</module>
@@ -1314,7 +1314,7 @@
                 <module>spring-vault</module>
                 <module>spring-vertx</module>
 
-                <module>spring-webflux-amqp</module> <!-- long -->
+                <module>spring-webflux-amqp</module> &lt;!&ndash; long &ndash;&gt;
                 <module>spring-websockets</module>
 
                 <module>static-analysis</module>
@@ -1328,7 +1328,7 @@
                 <module>twilio</module>
                 <module>twitter4j</module>
 
-                <!-- <module>undertow</module> --> <!-- 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) -->
+                &lt;!&ndash; <module>undertow</module> &ndash;&gt; &lt;!&ndash; 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) &ndash;&gt;
 
                 <module>vertx</module>
                 <module>vertx-and-rxjava</module>
@@ -1378,13 +1378,13 @@
                 <module>jhipster</module>
                 <module>jws</module>
 
-                <module>libraries</module> <!-- very long running -->
+                <module>libraries</module> &lt;!&ndash; very long running &ndash;&gt;
 
                 <module>vaadin</module>
                 <module>vavr</module>
             </modules>
 
-        </profile>
+        </profile>-->
 
     </profiles>
 

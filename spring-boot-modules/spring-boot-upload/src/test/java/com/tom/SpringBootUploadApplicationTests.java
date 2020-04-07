@@ -1,0 +1,13 @@
+package com.tom;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class SpringBootUploadApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
