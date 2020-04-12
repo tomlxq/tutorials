@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.baeldung.spring.controller.tiles")
+@ComponentScan(basePackages = "com.tom.spring.controller.tiles")
 public class TilesApplicationConfiguration implements WebMvcConfigurer {
 
     /**

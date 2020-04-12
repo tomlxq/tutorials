@@ -24,18 +24,18 @@ public class ArticleRssController {
     public Channel articleHttpFeed() {
         List<Article> items = new ArrayList<>();
         Article item1 = new Article();
-        item1.setLink("http://www.baeldung.com/netty-exception-handling");
+        item1.setLink("http://www.tom.com/netty-exception-handling");
         item1.setTitle("Exceptions in Netty");
         item1.setDescription("In this quick article, we’ll be looking at exception handling in Netty.");
         item1.setPublishedDate(new Date());
         item1.setAuthor("Carlos");
 
         Article item2 = new Article();
-        item2.setLink("http://www.baeldung.com/cockroachdb-java");
+        item2.setLink("http://www.tom.com/cockroachdb-java");
         item2.setTitle("Guide to CockroachDB in Java");
         item2.setDescription("This tutorial is an introductory guide to using CockroachDB with Java.");
         item2.setPublishedDate(new Date());
-        item2.setAuthor("Baeldung");
+        item2.setAuthor("Tom");
 
         items.add(item1);
         items.add(item2);

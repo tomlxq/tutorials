@@ -117,12 +117,12 @@ public class JSTLController {
     private void generateDummy(Connection connection) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO USERS " +
                 "(email, first_name, last_name, registered) VALUES (?, ?, ?, ?);");
-        preparedStatement.setString(1, "patrick@baeldung.com");
+        preparedStatement.setString(1, "patrick@tom.com");
         preparedStatement.setString(2, "Patrick");
         preparedStatement.setString(3, "Frank");
         preparedStatement.setDate(4, new Date(Calendar.getInstance().getTimeInMillis()));
         preparedStatement.addBatch();
-        preparedStatement.setString(1, "bfrank@baeldung.com");
+        preparedStatement.setString(1, "bfrank@tom.com");
         preparedStatement.setString(2, "Benjamin");
         preparedStatement.setString(3, "Franklin");
         preparedStatement.setDate(4, new Date(Calendar.getInstance().getTimeInMillis()));

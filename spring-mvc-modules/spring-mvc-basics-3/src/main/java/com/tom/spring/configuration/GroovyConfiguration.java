@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.groovy.GroovyMarkupViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.baeldung.springmvcforms", "com.baeldung.spring.controller", "com.baeldung.spring.validator"})
+@ComponentScan(basePackages = {"com.tom.springmvcforms", "com.tom.spring.controller", "com.tom.spring.validator"})
 public class GroovyConfiguration {
 
     @Bean

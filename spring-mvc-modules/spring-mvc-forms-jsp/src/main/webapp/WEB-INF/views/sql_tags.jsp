@@ -120,7 +120,7 @@
     </h3>
     <%
         Date registered = new Date("2018/03/31");
-        String email = "patrick@baeldung.com";
+        String email = "patrick@tom.com";
     %>
 
     <sql:update dataSource="${dataSource}" var="count">
@@ -158,11 +158,11 @@
     </h3>
     <sql:transaction dataSource="${dataSource}">
         <sql:update var="count">
-            UPDATE Users SET first_name = 'Patrick-Ellis' WHERE email='patrick@baeldung.com'
+            UPDATE Users SET first_name = 'Patrick-Ellis' WHERE email='patrick@tom.com'
         </sql:update>
 
         <sql:update var="count">
-            UPDATE Users SET last_name = 'Nelson' WHERE email = 'patrick@baeldung.com'
+            UPDATE Users SET last_name = 'Nelson' WHERE email = 'patrick@tom.com'
         </sql:update>
 
         <sql:update var="count">

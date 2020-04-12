@@ -355,7 +355,9 @@
 
                 </plugins>
             </build>
-
+<modules>
+    <module>core-java-modules/core-java-collections</module>
+</modules>
 
 
         </profile>

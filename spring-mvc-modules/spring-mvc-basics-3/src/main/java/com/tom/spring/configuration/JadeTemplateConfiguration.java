@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.baeldung.springmvcforms", "com.baeldung.spring.controller", "com.baeldung.spring.validator"})
+@ComponentScan(basePackages = {"com.tom.springmvcforms", "com.tom.spring.controller", "com.tom.spring.validator"})
 public class JadeTemplateConfiguration {
     @Bean
     public SpringTemplateLoader templateLoader() {

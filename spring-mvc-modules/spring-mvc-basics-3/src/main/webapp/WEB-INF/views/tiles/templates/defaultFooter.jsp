@@ -1,1 +1,1 @@
-<footer>copyright � Baeldung</footer>
+<footer>copyright � Tom</footer>

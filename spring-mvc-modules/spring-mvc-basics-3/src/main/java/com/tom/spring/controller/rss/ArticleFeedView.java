@@ -30,7 +30,7 @@ public class ArticleFeedView extends AbstractRssFeedView {
         List list = new ArrayList<Item>();
 
         Item item1 = new Item();
-        item1.setLink("http://www.baeldung.com/netty-exception-handling");
+        item1.setLink("http://www.tom.com/netty-exception-handling");
         item1.setTitle("Exceptions in Netty");
         Description description1 = new Description();
         description1.setValue("In this quick article, we’ll be looking at exception handling in Netty.");
@@ -39,13 +39,13 @@ public class ArticleFeedView extends AbstractRssFeedView {
         item1.setAuthor("Carlos");
 
         Item item2 = new Item();
-        item2.setLink("http://www.baeldung.com/cockroachdb-java");
+        item2.setLink("http://www.tom.com/cockroachdb-java");
         item2.setTitle("Guide to CockroachDB in Java");
         Description description2 = new Description();
         description2.setValue("This tutorial is an introductory guide to using CockroachDB with Java.");
         item2.setDescription(description2);
         item2.setPubDate(new Date());
-        item2.setAuthor("Baeldung");
+        item2.setAuthor("Tom");
 
         list.add(item1);
         list.add(item2);

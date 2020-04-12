@@ -27,7 +27,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.baeldung.springmvcforms", "com.baeldung.spring.controller", "com.baeldung.spring.validator", "com.baeldung.spring.mail", "com.baeldung.spring.service"})
+@ComponentScan(basePackages = {"com.tom.springmvcforms", "com.tom.spring.controller", "com.tom.spring.validator", "com.tom.spring.mail", "com.tom.spring.service"})
 public class ApplicationConfiguration implements WebMvcConfigurer {
 
     @Override
