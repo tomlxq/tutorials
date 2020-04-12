@@ -30,8 +30,8 @@ public class CreateNavMenuUnitTest {
 
     @Test
     public void createMenu() throws IOException {
-        final List<String> back_to_basics = List.of("Spring MVC Guides", "Intermediate Concepts in Spring MVC");
-        String filename = "14.Velocity的Spring MVC快速指南";
+        final List<String> back_to_basics = List.of("Spring MVC Guides", "Advanced Concepts in Spring MVC");
+        String filename = "1.使用Spring MVC上传和显示Excel文件";
         initFile(back_to_basics, filename);
     }
 
