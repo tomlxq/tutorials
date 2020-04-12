@@ -132,7 +132,7 @@
     <properties>
         <spring.fox.version>3.0.0-SNAPSHOT</spring.fox.version>
         <start-class>com.tom.swagger2boot.SpringBootSwaggerApplication</start-class>
-        <!-- <start-class>com.baeldung.springbootmvc.SpringBootMvcFnApplication</start-class> -->
+        <!-- <start-class>com.tom.springbootmvc.SpringBootMvcFnApplication</start-class> -->
         <spring-boot.version>2.2.0.BUILD-SNAPSHOT</spring-boot.version>
         <xstream.version>1.4.11.1</xstream.version>
     </properties>

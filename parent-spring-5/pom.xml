@@ -28,5 +28,6 @@
     <properties>
         <spring.version>5.2.2.RELEASE</spring.version>
         <spring-security.version>5.2.1.RELEASE</spring-security.version>
+        <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>
     </properties>
 </project>
