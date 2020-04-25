@@ -15,14 +15,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class WebMVCSecurity extends WebSecurityConfigurerAdapter {
 
+    public WebMVCSecurity() {
+        super();
+    }
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
-    }
-
-    public WebMVCSecurity() {
-        super();
     }
 
     @Override

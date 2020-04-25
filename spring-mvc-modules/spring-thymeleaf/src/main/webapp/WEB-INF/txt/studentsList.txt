@@ -5,4 +5,4 @@ This is the list of our students:
    - [(${s.name})]. ID: [(${s.id})]
 [/]
 Thanks,
-The Tom University
+The tom University

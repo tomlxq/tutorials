@@ -24,8 +24,13 @@ public class StudentUtils {
             student2.setName("Jane Williams");
             student2.setGender('F');
             student2.setPercentage(Float.valueOf("60.25"));
-
             students.add(student2);
+            Student student3 = new Student();
+            student3.setId(1003);
+            student3.setName("tom");
+            student3.setGender('F');
+            student3.setPercentage(Float.valueOf("62.25"));
+            students.add(student3);
         }
 
         return students;

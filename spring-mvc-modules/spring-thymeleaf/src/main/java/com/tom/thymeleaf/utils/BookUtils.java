@@ -8,11 +8,9 @@ import java.util.stream.IntStream;
 
 public class BookUtils {
 
-    private static List<Book> books = new ArrayList<Book>();
-
     private static final int NUM_BOOKS = 30;
-
     private static final int MIN_BOOK_NUM = 1000;
+    private static List<Book> books = new ArrayList<Book>();
 
     public static List<Book> buildBooks() {
         if (books.isEmpty()) {

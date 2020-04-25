@@ -4,8 +4,8 @@
 <head>
     <title>Student List</title>
 </head>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"
+        type="text/javascript"></script>
 <script>
     $(document).ready(function () {
         $.ajax({
@@ -29,8 +29,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="student, iStat : ${students}" th:style="${iStat.odd}? 'font-weight: bold;'"
-        th:alt-title="${iStat.even}? 'even' : 'odd'">
+    <tr th:alt-title="${iStat.even}? 'even' : 'odd'" th:each="student, iStat : ${students}"
+        th:style="${iStat.odd}? 'font-weight: bold;'">
         <td th:text="${student.id}"/>
         <td th:text="${student.name}"/>
         <td th:switch="${student.gender}"><span th:case="'M'"

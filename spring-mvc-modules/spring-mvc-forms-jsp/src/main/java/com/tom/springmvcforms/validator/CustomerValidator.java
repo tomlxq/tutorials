@@ -1,10 +1,11 @@
 package com.tom.springmvcforms.validator;
 
-import com.tom.springmvcforms.domain.Customer;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+
+import com.tom.springmvcforms.domain.Customer;
 
 @Component
 public class CustomerValidator implements Validator {

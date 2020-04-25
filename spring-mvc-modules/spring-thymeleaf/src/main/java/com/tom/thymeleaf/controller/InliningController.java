@@ -12,7 +12,7 @@ public class InliningController {
 
     @RequestMapping(value = "/html", method = RequestMethod.GET)
     public String getExampleHTML(Model model) {
-        model.addAttribute("title", "Tom");
+        model.addAttribute("title", "tom");
         model.addAttribute("description", "<strong>Thymeleaf</strong> tutorial");
         return "inliningExample.html";
     }

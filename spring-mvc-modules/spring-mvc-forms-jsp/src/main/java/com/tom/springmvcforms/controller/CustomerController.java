@@ -1,7 +1,7 @@
 package com.tom.springmvcforms.controller;
 
-import com.tom.springmvcforms.domain.Customer;
-import com.tom.springmvcforms.validator.CustomerValidator;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
+import com.tom.springmvcforms.domain.Customer;
+import com.tom.springmvcforms.validator.CustomerValidator;
 
 @Controller
 public class CustomerController {

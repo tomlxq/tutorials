@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class SQLConnection {
     private static String userName = "root";
-    private static String password = "root";
+    private static String password = "";
     private static final Logger LOGGER = LoggerFactory.getLogger(SQLConnection.class.getName());
 
     public static Connection getConnection() throws Exception {
@@ -21,7 +21,7 @@ public class SQLConnection {
         connectionProps.put("user", userName);
         connectionProps.put("password", password);
         conn = DriverManager.getConnection(
-                "jdbc:mysql://192.168.238.150:3306/test?autoReconnect=true&useSSL=false",
+                "jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false",
                 connectionProps);
         LOGGER.info("Connected to database");
         return conn;

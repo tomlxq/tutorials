@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>Add Student</h1>
-<form action="#" th:action="@{/saveStudent}" th:object="${student}"
-      method="post">
+<form action="#" method="post" th:action="@{/saveStudent}"
+      th:object="${student}">
     <ul>
         <li th:errors="*{id}"/>
         <li th:errors="*{name}"/>
@@ -17,24 +17,24 @@
     <table border="1">
         <tr>
             <td><label th:text="#{msg.id}"/></td>
-            <td><input type="number" th:field="*{id}"/></td>
+            <td><input th:field="*{id}" type="number"/></td>
         </tr>
         <tr>
             <td><label th:text="#{msg.name}"/></td>
-            <td><input type="text" th:field="*{name}"/></td>
+            <td><input th:field="*{name}" type="text"/></td>
         </tr>
         <tr>
             <td><label th:text="#{msg.gender}"/></td>
             <td><select th:field="*{gender}">
-                <option th:value="'M'" th:text="Male"></option>
-                <option th:value="'F'" th:text="Female"></option>
+                <option th:text="Male" th:value="'M'"></option>
+                <option th:text="Female" th:value="'F'"></option>
             </select></td>
         </tr>
         <tr>
             <td><label th:text="#{msg.percent}"/></td>
             <td><select id="percentage" name="percentage">
-                <option th:each="i : ${#numbers.sequence(0, 100)}" th:value="${i}" th:text="${i}"
-                        th:selected="${i==75}"></option>
+                <option th:each="i : ${#numbers.sequence(0, 100)}" th:selected="${i==75}" th:text="${i}"
+                        th:value="${i}"></option>
             </select></td>
         </tr>
         <tr>

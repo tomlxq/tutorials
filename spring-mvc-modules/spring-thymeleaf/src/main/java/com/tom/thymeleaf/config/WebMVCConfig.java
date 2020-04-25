@@ -47,6 +47,7 @@ public class WebMVCConfig implements WebMvcConfigurer, ApplicationContextAware {
     }
 
     @Bean
+    @Description("Thymeleaf Template Resolver")
     public ViewResolver htmlViewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine(htmlTemplateResolver()));

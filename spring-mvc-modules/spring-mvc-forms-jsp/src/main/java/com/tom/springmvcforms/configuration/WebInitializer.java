@@ -10,22 +10,22 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 public class WebInitializer implements WebApplicationInitializer {
-    @Override
-    public void onStartup(ServletContext container) throws ServletException {
 
-        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.register(ApplicationConfiguration.class);
-        ctx.setServletContext(container);
+	public void onStartup(ServletContext container) throws ServletException {
 
-        // Manage the lifecycle of the root application context
-        container.addListener(new ContextLoaderListener(ctx));
+		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
+		ctx.register(ApplicationConfiguration.class);
+		ctx.setServletContext(container);
 
-        ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
+		// Manage the lifecycle of the root application context
+		container.addListener(new ContextLoaderListener(ctx));
 
-        servlet.setLoadOnStartup(1);
-        servlet.addMapping("/");
+		ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
 
-    }
+		servlet.setLoadOnStartup(1);
+		servlet.addMapping("/");
+
+	}
 //	@Override
 //	public void onStartup(ServletContext container) {
 //		// Create the 'root' Spring application context

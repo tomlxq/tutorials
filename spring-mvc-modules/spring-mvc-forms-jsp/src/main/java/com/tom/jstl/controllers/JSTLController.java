@@ -17,11 +17,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Calendar;
 
 @Controller
@@ -43,7 +39,7 @@ public class JSTLController {
             int status = preparedStatement.executeUpdate();
             preparedStatement = connection.prepareStatement("SELECT COUNT(*) AS total FROM USERS;");
             ResultSet result = preparedStatement.executeQuery();
-            if (result != null) {
+            if(result!=null) {
                 result.next();
                 if (result.getInt("total") == 0) {
                     generateDummy(connection);
@@ -101,8 +97,7 @@ public class JSTLController {
     }
 
     @RequestMapping(value = "/items_xml", method = RequestMethod.GET)
-    @ResponseBody
-    public FileSystemResource getFile(HttpServletRequest request, HttpServletResponse response) {
+    @ResponseBody public FileSystemResource getFile(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("application/xml");
         return new FileSystemResource(new File(servletContext.getRealPath("/WEB-INF/items.xsl")));
     }

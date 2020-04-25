@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -21,11 +20,11 @@ import java.util.stream.Collectors;
 @Controller
 public class UserController {
 
-    private List<User> users = new ArrayList<>(Arrays.asList(
-            new User("ana@yahoo.com", "pass", "Ana", 20),
-            new User("bob@yahoo.com", "pass", "Bob", 30),
-            new User("john@yahoo.com", "pass", "John", 40),
-            new User("mary@yahoo.com", "pass", "Mary", 30)));
+    private List<User> users = Arrays.asList(
+      new User("ana@yahoo.com", "pass", "Ana", 20),
+      new User("bob@yahoo.com", "pass", "Bob", 30),
+      new User("john@yahoo.com", "pass", "John", 40),
+      new User("mary@yahoo.com", "pass", "Mary", 30));
 
     @GetMapping("/userPage")
     public String getUserProfilePage() {
@@ -37,8 +36,8 @@ public class UserController {
     public ResponseEntity<Object> saveUser(@Valid User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
             final List<String> errors = result.getAllErrors().stream()
-                    .map(DefaultMessageSourceResolvable::getDefaultMessage)
-                    .collect(Collectors.toList());
+              .map(DefaultMessageSourceResolvable::getDefaultMessage)
+              .collect(Collectors.toList());
 
             return new ResponseEntity<>(errors, HttpStatus.OK);
         } else {

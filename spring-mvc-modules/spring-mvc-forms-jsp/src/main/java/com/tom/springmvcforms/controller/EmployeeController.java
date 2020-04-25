@@ -4,11 +4,7 @@ import com.tom.springmvcforms.domain.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -25,9 +21,8 @@ public class EmployeeController {
         return new ModelAndView("employeeHome", "employee", new Employee());
     }
 
-    @RequestMapping(value = "/employee/{Id}", produces = {"application/json", "application/xml"}, method = RequestMethod.GET)
-    public @ResponseBody
-    Employee getEmployeeById(@PathVariable final long Id) {
+    @RequestMapping(value = "/employee/{Id}", produces = { "application/json", "application/xml" }, method = RequestMethod.GET)
+    public @ResponseBody Employee getEmployeeById(@PathVariable final long Id) {
         return employeeMap.get(Id);
     }
 

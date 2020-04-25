@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-thymeleaf</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>${project.parent.version}</version>
     <name>spring-thymeleaf</name>
     <packaging>war</packaging>
 
@@ -120,17 +120,17 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
                 <version>${cargo-maven2-plugin.version}</version>
                 <configuration>
-                    <wait>true</wait>
+                    <!--<wait>true</wait> caused errors on commit -->
                     <container>
-                        <containerId>jetty9x</containerId>
+                        <containerId>tomcat8x</containerId>
                         <type>embedded</type>
                         <systemProperties>
+                            <!-- <provPersistenceTarget>cargo</provPersistenceTarget> -->
                         </systemProperties>
                     </container>
                     <configuration>
@@ -140,6 +140,25 @@
                     </configuration>
                 </configuration>
             </plugin>
+            <!--  <plugin>
+                  <groupId>org.codehaus.cargo</groupId>
+                  <artifactId>cargo-maven2-plugin</artifactId>
+                  <version>${cargo-maven2-plugin.version}</version>
+                  <configuration>
+                      &lt;!&ndash;<wait>true</wait>&ndash;&gt;
+                      <container>
+                          <containerId>jetty9x</containerId>
+                          <type>embedded</type>
+                          <systemProperties>
+                          </systemProperties>
+                      </container>
+                      <configuration>
+                          <properties>
+                              <cargo.servlet.port>8082</cargo.servlet.port>
+                          </properties>
+                      </configuration>
+                  </configuration>
+              </plugin>-->
 
         </plugins>
     </build>
@@ -153,7 +172,7 @@
         <hibernate-validator.version>6.0.11.Final</hibernate-validator.version>
 
         <!-- Maven plugins -->
-        <cargo-maven2-plugin.version>1.6.1</cargo-maven2-plugin.version>
+        <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>
     </properties>
 
 </project>
