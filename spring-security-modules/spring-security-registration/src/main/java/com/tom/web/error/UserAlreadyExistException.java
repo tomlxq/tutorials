@@ -1,9 +1,3 @@
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/4/21
- */
 package com.tom.web.error;
 
 public final class UserAlreadyExistException extends RuntimeException {
@@ -25,6 +19,5 @@ public final class UserAlreadyExistException extends RuntimeException {
     public UserAlreadyExistException(final Throwable cause) {
         super(cause);
     }
-
 
 }

@@ -31,7 +31,7 @@ public class CreateNavMenuUnitTest {
     @Test
     public void createMenu() throws IOException {
         final List<String> back_to_basics = List.of("Security with Spring", "The Registration Series");
-        String filename = "1.Spring安全表单登录";
+        String filename = "4.注册–通过电子邮件激活新帐户";
         initFile(back_to_basics, filename);
     }
 

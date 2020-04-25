@@ -6,12 +6,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.request.RequestContextListener;
 
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/4/21
- */
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 

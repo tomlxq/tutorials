@@ -1,0 +1,13 @@
+package com.tom.relationships.repositories;
+
+import com.tom.relationships.models.Tweet;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface TweetRepository extends PagingAndSortingRepository<Tweet, Long> {
+
+    @Query("select twt from Tweet twt  JOIN twt.likes as lk where lk = ?#{ principal?.username } or twt.owner = ?#{ principal?.username }")
+    Page<Tweet> getMyTweetsAndTheOnesILiked(Pageable pageable);
+}
