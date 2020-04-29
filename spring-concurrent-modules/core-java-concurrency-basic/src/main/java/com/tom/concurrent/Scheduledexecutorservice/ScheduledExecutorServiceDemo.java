@@ -1,14 +1,30 @@
 package com.tom.concurrent.Scheduledexecutorservice;
 
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class ScheduledExecutorServiceDemo {
+	public void execute() {
+		ScheduledExecutorService executorService
+				= Executors.newSingleThreadScheduledExecutor();
 
-	private void execute() {
+		Future<String> future = executorService.schedule(() -> {
+			// ...
+			return "Hello world";
+		}, 1, TimeUnit.SECONDS);
+
+		ScheduledFuture<?> scheduledFuture = executorService.schedule(() -> {
+			// ...
+		}, 1, TimeUnit.SECONDS);
+
+		executorService.shutdown();
+	}
+
+	private void execute2() {
 		ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 		getTasksToRun().apply(executorService);
 		executorService.shutdown();

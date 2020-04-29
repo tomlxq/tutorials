@@ -6,10 +6,7 @@
     <groupId>com.tom</groupId>
     <artifactId>parent-modules</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-boot-modules/spring-boot-bootstrap</module>
-        <module>spring-concurrent-modules/spring-threads</module>
-    </modules>
+
     <name>parent-modules</name>
     <packaging>pom</packaging>
 
@@ -390,8 +387,7 @@
                 <module>parent-spring-5</module>
                 <module>parent-java</module>
                 <module>core-java-modules/core-java-collections</module>
-                <module>core-java-modules/core-java-concurrency-basic</module>
-                <module>spring-mvc-modules/spring-static-resources</module>
+                <!--  <module>spring-concurrent-modules/spring-threads</module>-->
             </modules>
 
         </profile>

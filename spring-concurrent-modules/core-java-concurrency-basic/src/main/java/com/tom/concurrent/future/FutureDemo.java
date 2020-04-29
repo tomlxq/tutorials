@@ -11,7 +11,7 @@ public class FutureDemo {
 
     public String invoke() {
 
-        String str = null;
+
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
@@ -28,7 +28,7 @@ public class FutureDemo {
         } catch (InterruptedException | ExecutionException | TimeoutException e1) {
             e1.printStackTrace();
         }
-
+        String str = null;
         if (future.isDone() && !future.isCancelled()) {
             try {
                 str = future.get();
