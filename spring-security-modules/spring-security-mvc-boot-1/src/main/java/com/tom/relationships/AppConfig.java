@@ -40,7 +40,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[]{"com.baeldung.relationships.models"});
+        em.setPackagesToScan(new String[]{"com.tom.relationships.models"});
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(additionalProperties());
         return em;

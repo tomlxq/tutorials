@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-// In order to execute these tests, com.baeldung.ip.IpApplication needs to be running.
+// In order to execute these tests, com.tom.ip.IpApplication needs to be running.
 public class IpLiveTest {
 
     @Test

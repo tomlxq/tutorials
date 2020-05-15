@@ -19,6 +19,6 @@ public class ThreadLocalWithUserContext implements Runnable {
     public void run() {
         String userName = userRepository.getUserNameForUserId(userId);
         userContext.set(new Context(userName));
-        LOG.debug("thread context for given userId: " + userId + " is: " + userContext.get());
+        LOG.info("thread context for given userId: " + userId + " is: " + userContext.get());
     }
 }

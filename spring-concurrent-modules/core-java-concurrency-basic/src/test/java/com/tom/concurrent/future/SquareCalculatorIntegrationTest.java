@@ -1,5 +1,6 @@
 package com.tom.concurrent.future;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -18,6 +19,7 @@ import java.util.concurrent.TimeoutException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+@Slf4j
 public class SquareCalculatorIntegrationTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(SquareCalculatorIntegrationTest.class);
@@ -37,7 +39,7 @@ public class SquareCalculatorIntegrationTest {
         Future<Integer> result2 = squareCalculator.calculate(1000);
 
         while (!result1.isDone() || !result2.isDone()) {
-            LOG.debug(String.format("Task 1 is %s and Task 2 is %s.", result1.isDone() ? "done" : "not done", result2.isDone() ? "done" : "not done"));
+            LOG.info(String.format("Task 1 is %s and Task 2 is %s.", result1.isDone() ? "done" : "not done", result2.isDone() ? "done" : "not done"));
 
             Thread.sleep(300);
         }
@@ -63,7 +65,7 @@ public class SquareCalculatorIntegrationTest {
         Future<Integer> result2 = squareCalculator.calculate(1000);
 
         while (!result1.isDone() || !result2.isDone()) {
-            LOG.debug(String.format("Task 1 is %s and Task 2 is %s.", result1.isDone() ? "done" : "not done", result2.isDone() ? "done" : "not done"));
+            LOG.info(String.format("Task 1 is %s and Task 2 is %s.", result1.isDone() ? "done" : "not done", result2.isDone() ? "done" : "not done"));
 
             Thread.sleep(300);
         }
@@ -93,6 +95,6 @@ public class SquareCalculatorIntegrationTest {
 
     @After
     public void end() {
-        LOG.debug(String.format("Test %s took %s ms \n", name.getMethodName(), System.currentTimeMillis() - start));
+        LOG.info(String.format("Test %s took %s ms \n", name.getMethodName(), System.currentTimeMillis() - start));
     }
 }

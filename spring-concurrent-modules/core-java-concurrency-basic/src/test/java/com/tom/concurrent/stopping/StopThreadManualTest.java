@@ -26,8 +26,7 @@ public class StopThreadManualTest {
 
         // Stop it and make sure the flags have been reversed
         controlSubThread.stop();
-        await()
-                .until(() -> assertTrue(controlSubThread.isStopped()));
+        await().until(() -> assertTrue(controlSubThread.isStopped()));
     }
 
     @Test
