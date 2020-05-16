@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public class DaemonThreadUnitTest {
 
     @Test
-    @Ignore
+  //  @Ignore
     public void whenCallIsDaemon_thenCorrect() {
         NewThread daemonThread = new NewThread();
         NewThread userThread = new NewThread();
