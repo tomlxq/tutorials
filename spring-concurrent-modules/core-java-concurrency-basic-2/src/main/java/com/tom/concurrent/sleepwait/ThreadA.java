@@ -1,18 +1,22 @@
 package com.tom.concurrent.sleepwait;
 
+import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /***
  * Example of waking up a waiting thread
  */
-public class ThreadA {
+public class ThreadA extends Thread {
 
     private static final Logger LOG = LoggerFactory.getLogger(ThreadA.class);
 
     private static final ThreadB b = new ThreadB();
 
-    public static void main(String... args) throws InterruptedException {
+    @SneakyThrows
+    @Override
+    public void run() {
+        // public static void main(String... args) throws InterruptedException {
         b.start();
 
         synchronized (b) {

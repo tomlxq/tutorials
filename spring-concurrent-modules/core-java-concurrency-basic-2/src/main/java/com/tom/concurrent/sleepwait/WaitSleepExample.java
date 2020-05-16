@@ -12,17 +12,14 @@ public class WaitSleepExample {
 
     private static final Object LOCK = new Object();
 
-    public static void main(String... args) throws InterruptedException {
-        sleepWaitInSynchronizedBlocks();
-    }
 
-    private static void sleepWaitInSynchronizedBlocks() throws InterruptedException {
+    protected static void sleepWaitInSynchronizedBlocks() throws InterruptedException {
         Thread.sleep(1000); // called on the thread
-        LOG.debug("Thread '" + Thread.currentThread().getName() + "' is woken after sleeping for 1 second");
+        LOG.info("Thread '" + Thread.currentThread().getName() + "' is woken after sleeping for 1 second");
 
         synchronized (LOCK) {
             LOCK.wait(1000); // called on the object, synchronization required
-            LOG.debug("Object '" + LOCK + "' is woken after waiting for 1 second");
+            LOG.info("Object '" + LOCK + "' is woken after waiting for 1 second");
         }
     }
 

@@ -45,7 +45,7 @@ public class ThreadJoinUnitTest {
         LOGGER.info("Invoking join.");
         t1.join();
         LOGGER.info("Returned from join");
-        LOGGER.info("Thread state is" + t1.getState());
+        LOGGER.info("Thread state is " + t1.getState());
         assertFalse(t1.isAlive());
     }
 
@@ -56,7 +56,7 @@ public class ThreadJoinUnitTest {
         t2.start();
         LOGGER.info("Invoking join.");
         t2.join();
-        LOGGER.info("Returned from join");
+        LOGGER.info("Returned from join, State " + t2.getState());
         assertFalse(t2.isAlive());
     }
 
@@ -65,7 +65,9 @@ public class ThreadJoinUnitTest {
             throws InterruptedException {
         Thread t3 = new SampleThread(10);
         t3.start();
+        LOGGER.info("Invoking join.");
         t3.join(1000);
+        LOGGER.info("Returned from join, State " + t3.getState());
         assertTrue(t3.isAlive());
     }
 
