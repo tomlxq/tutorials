@@ -78,7 +78,7 @@ public class CompletableFutureLongRunningUnitTest {
     public void whenAddingThenAcceptToFuture_thenFunctionExecutesAfterComputationIsFinished() throws ExecutionException, InterruptedException {
         CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> "Hello");
 
-        CompletableFuture<Void> future = completableFuture.thenAccept(s -> LOG.debug("Computation returned: " + s));
+        CompletableFuture<Void> future = completableFuture.thenAccept(s -> LOG.info("Computation returned: " + s));
 
         future.get();
     }

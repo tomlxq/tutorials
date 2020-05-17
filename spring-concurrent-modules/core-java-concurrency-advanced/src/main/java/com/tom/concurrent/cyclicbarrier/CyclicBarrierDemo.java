@@ -15,7 +15,7 @@ public class CyclicBarrierDemo {
     private int NUM_PARTIAL_RESULTS;
     private int NUM_WORKERS;
 
-    private void runSimulation(int numWorkers, int numberOfPartialResults) {
+    protected void runSimulation(int numWorkers, int numberOfPartialResults) {
         NUM_PARTIAL_RESULTS = numberOfPartialResults;
         NUM_WORKERS = numWorkers;
 
@@ -69,9 +69,5 @@ public class CyclicBarrierDemo {
 
     }
 
-    public static void main(String[] args) {
-        CyclicBarrierDemo play = new CyclicBarrierDemo();
-        play.runSimulation(5, 3);
-    }
 
 }

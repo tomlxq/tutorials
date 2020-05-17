@@ -26,8 +26,5 @@ public class CountdownLatchCountExample {
         return countDownLatch.getCount() == 0;
     }
 
-    public static void main(String[] args) {
-        CountdownLatchCountExample ex = new CountdownLatchCountExample(2);
-        System.out.println("Is CountDown Completed : " + ex.callTwiceInSameThread());
-    }
+
 }
