@@ -377,7 +377,7 @@
                 <module>parent-java</module>
                 <module>core-java-modules/core-java-collections</module>
 
-
+                <module>core-java-modules/core-java-8</module>
                 <!--  <module>spring-concurrent-modules/spring-threads</module>-->
             </modules>
 

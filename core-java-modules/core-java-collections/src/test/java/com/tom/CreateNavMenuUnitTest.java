@@ -37,8 +37,8 @@ public class CreateNavMenuUnitTest {
 
         //final List<String> back_to_basics = List.of("Spring Boot", "Boot Basics");
         //String filename = "1.Spring Boot教程–引导一个简单的应用程序";
-        final List<String> back_to_basics = List.of("Java Concurrency", "Advanced Concurrency in Java");
-        String filename = "13.什么是线程安全以及如何实现？";
+        final List<String> back_to_basics = List.of("Java Streams", "Stream Collectors");
+        String filename = "1.Java 8 Collectors指南";
 
         initFile(back_to_basics, filename);
     }

@@ -1,9 +1,3 @@
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/2/20
- */
 package com.tom.jctools;
 
 import org.jctools.queues.MpmcArrayQueue;
@@ -75,8 +69,5 @@ public class MpmcBenchmark {
         while (!control.stopMeasurement && queue.poll() == null) {
             // Is intentionally left blank
         }
-    }
-    public static void main(String[] args) throws Exception {
-        org.openjdk.jmh.Main.main(args);
     }
 }

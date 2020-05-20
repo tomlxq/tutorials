@@ -12,18 +12,45 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import static org.junit.Assert.assertTrue;
+
 public class RunnableVsThreadLiveTest {
 
-	private static Logger log =
-			LoggerFactory.getLogger(RunnableVsThreadLiveTest.class);
+    private static Logger log =
+            LoggerFactory.getLogger(RunnableVsThreadLiveTest.class);
 
-	private static ExecutorService executorService;
+    private static ExecutorService executorService;
 
-	@BeforeClass
-	public static void setup() {
-		executorService = Executors.newCachedThreadPool();
-	}
+    @BeforeClass
+    public static void setup() {
+        executorService = Executors.newCachedThreadPool();
+    }
 
+    @Test
+    public void test_thread_interrupt() throws Exception {
+        Thread daemon = new Thread(()
+                -> System.out.println("Hello from user thread!"));
+        daemon.start();
+        Thread.interrupted();
+        daemon.interrupt();
+        assertTrue(daemon.isInterrupted());
+    }
+
+    @Test
+    public void test_thread() throws Exception {
+        Thread thread1 = new Thread(() ->
+                System.out.println("Hello World from Runnable!"));
+        thread1.start();
+
+        Thread thread2 = new Thread() {
+            @Override
+            public void run() {
+                System.out.println("Hello World from subclass!");
+            }
+        };
+        thread2.start();
+
+    }
 	@Test
 	public void givenARunnable_whenRunIt_thenResult() throws Exception {
 		Thread thread = new Thread(new SimpleRunnable(
