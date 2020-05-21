@@ -1,10 +1,7 @@
 package com.tom.spliteratorAPI;
 
-import lombok.Data;
-
 import java.util.List;
 
-@Data
 public class Article {
     private List<Author> listOfAuthors;
     private int id;
@@ -19,4 +16,29 @@ public class Article {
         this.listOfAuthors = listOfAuthors;
         this.id = id;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Author> getListOfAuthors() {
+        return listOfAuthors;
+    }
+
+    public void setListOfAuthors(List<Author> listOfAuthors) {
+        this.listOfAuthors = listOfAuthors;
+    }
+
 }

@@ -1,6 +1,10 @@
-package com.tom.java_8_features;
+package com.tom.java8;
 
-
+import com.tom.java_8_features.Address;
+import com.tom.java_8_features.CustomException;
+import com.tom.java_8_features.OptionalAddress;
+import com.tom.java_8_features.OptionalUser;
+import com.tom.java_8_features.User;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,40 +37,24 @@ public class Java8OptionalUnitTest {
     }
 
     @Test
-    public void checkOptional_whenAsExpectedWithNewObj_thenCorrect() {
+    public void checkOptional_whenAsExpected_thenCorrect() {
+        Optional<String> optionalEmpty = Optional.empty();
+        assertFalse(optionalEmpty.isPresent());
 
-        List<String> listOpt = list != null ? list : new ArrayList<>();
-        assertTrue(listOpt == list);
+        String str = "value";
+        Optional<String> optional = Optional.of(str);
+        assertEquals(optional.get(), "value");
 
-        List<String> listOpt2 = Optional.ofNullable(list).orElseGet(() -> new ArrayList<>());
-        assertTrue(listOpt2 == list);
+        Optional<String> optionalNullable = Optional.ofNullable(str);
+        Optional<String> optionalNull = Optional.ofNullable(null);
+        assertEquals(optionalNullable.get(), "value");
+        assertFalse(optionalNull.isPresent());
 
-
-        List<String> listOpt3 = Optional.of(list).orElse(new ArrayList<>());
+        List<String> listOpt = Optional.of(list).orElse(new ArrayList<>());
         List<String> listNull = null;
         List<String> listOptNull = Optional.ofNullable(listNull).orElse(new ArrayList<>());
-        assertTrue(listOpt3 == list);
+        assertTrue(listOpt == list);
         assertTrue(listOptNull.isEmpty());
-    }
-
-    private String getUserAddr() {
-        User user = getUser();
-        if (user != null) {
-            Address address = user.getAddress();
-            if (address != null) {
-                String street = address.getStreet();
-                if (street != null) {
-                    return street;
-                }
-            }
-        }
-        return "not specified";
-    }
-
-    @Test
-    public void checkOptional_whenAsExpectedWithNullDecide_thenCorrect() {
-        //before java8
-        assertEquals(getUserAddr(), "1st Avenue");
 
         Optional<User> user = Optional.ofNullable(getUser());
         String result = user.map(User::getAddress).map(Address::getStreet).orElse("not specified");
@@ -83,52 +71,13 @@ public class Java8OptionalUnitTest {
         Optional<OptionalUser> optionalUserNull = Optional.ofNullable(getOptionalUserNull());
         String resultOptNull = optionalUserNull.flatMap(OptionalUser::getAddress).flatMap(OptionalAddress::getStreet).orElse("not specified");
         assertEquals(resultOptNull, "not specified");
-    }
 
-    @Test
-    public void checkOptional_whenAsExpected_thenCorrect() {
-        Optional<String> optionalEmpty = Optional.empty();
-        assertFalse(optionalEmpty.isPresent());
-
-        String str = "value";
-        Optional<String> optional = Optional.of(str);
-        assertEquals(optional.get(), "value");
-
-        Optional<String> optionalNullable = Optional.ofNullable(str);
-        Optional<String> optionalNull = Optional.ofNullable(null);
-        assertEquals(optionalNullable.get(), "value");
-        assertFalse(optionalNull.isPresent());
-
-
-    }
-
-    public String getOrThrowBeforeJava8() {
-        String value = null;
-        String result = "";
-        try {
-            result = value.toUpperCase();
-        } catch (NullPointerException exception) {
-            throw new CustomException();
-        }
-        return result;
-    }
-
-    @Test(expected = CustomException.class)
-    public void callMethod_whenCustomExceptionBeforeJava8_thenCorrect() {
-        String result = getOrThrowBeforeJava8();
-    }
-
-    public String getOrThrow() {
-        String value = null;
-        Optional<String> valueOpt = Optional.ofNullable(value);
-        String result = valueOpt.orElseThrow(CustomException::new).toUpperCase();
-        return result;
     }
 
     @Test(expected = CustomException.class)
     public void callMethod_whenCustomException_thenCorrect() {
         User user = new User();
-        String result = getOrThrow();
+        String result = user.getOrThrow();
     }
 
     private User getUser() {
