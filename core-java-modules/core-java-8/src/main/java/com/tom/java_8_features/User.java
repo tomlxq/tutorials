@@ -1,17 +1,23 @@
 package com.tom.java_8_features;
 
+import java.util.Optional;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 public class User {
 
     private String name;
 
     private Address address;
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public User() {
+    }
 
     public User(String name) {
         this.name = name;
@@ -21,6 +27,12 @@ public class User {
         return true;
     }
 
+    public String getOrThrow() {
+        String value = null;
+        Optional<String> valueOpt = Optional.ofNullable(value);
+        String result = valueOpt.orElseThrow(CustomException::new).toUpperCase();
+        return result;
+    }
 
     public boolean isLegalName(String name) {
         return name.length() > 3 && name.length() < 16;

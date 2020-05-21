@@ -1,6 +1,7 @@
-package com.tom.java_8_features;
+package com.tom.java8;
 
-
+import com.tom.java_8_features.Vehicle;
+import com.tom.java_8_features.VehicleImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

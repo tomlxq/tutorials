@@ -1,6 +1,5 @@
 package com.tom.spliteratorAPI;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +10,6 @@ import java.util.stream.StreamSupport;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Slf4j
 public class ExecutorUnitTest {
     Article article;
     Stream<Author> stream;
@@ -34,12 +32,6 @@ public class ExecutorUnitTest {
     }
 
     @Test
-    public void
-    givenAStreamOfAuthors_whenProcessedInParallel_countProducesWrongOutput() {
-        assertThat(Executor.countAutors(stream.parallel())).isGreaterThan(9);
-    }
-
-    @Test
     public void givenAstreamOfAuthors_whenProcessedInParallelWithCustomSpliterator_coubtProducessRightOutput() {
         Stream<Author> stream2 = StreamSupport.stream(spliterator, true);
         assertThat(Executor.countAutors(stream2.parallel())).isEqualTo(9);
@@ -49,19 +41,5 @@ public class ExecutorUnitTest {
     public void givenSpliterator_whenAppliedToAListOfArticle_thenSplittedInHalf() {
         assertThat(new Task(split1).call()).containsSequence(Executor.generateElements().size() / 2 + "");
         assertThat(new Task(split2).call()).containsSequence(Executor.generateElements().size() / 2 + "");
-    }
-
-    @Test
-    public void givenSpliterator_whenAppliedToAListOfArticle_thenSplittedInHalf2() {
-        Spliterator<Article> split1 = Executor.generateElements().spliterator();
-        Spliterator<Article> split2 = split1.trySplit();
-        log.info("Size: " + split1.estimateSize());
-        log.info("Characteristics: " + split1.characteristics());
-        assertThat(new Task(split1).call())
-                .containsSequence(Executor.generateElements().size() / 2 + "");
-
-        assertThat(new Task(split2).call())
-                .containsSequence(Executor.generateElements().size() / 2 + "");
-
     }
 }

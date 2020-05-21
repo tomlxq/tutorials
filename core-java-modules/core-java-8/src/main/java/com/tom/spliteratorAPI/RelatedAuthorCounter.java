@@ -1,6 +1,5 @@
 package com.tom.spliteratorAPI;
 
-
 public class RelatedAuthorCounter {
     private final int counter;
     private final boolean isRelated;

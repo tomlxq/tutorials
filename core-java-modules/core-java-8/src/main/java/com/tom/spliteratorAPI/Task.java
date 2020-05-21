@@ -1,12 +1,11 @@
 package com.tom.spliteratorAPI;
 
-
 import java.util.Spliterator;
 import java.util.concurrent.Callable;
 
 public class Task implements Callable<String> {
     private Spliterator<Article> spliterator;
-    private final static String SUFFIX = "- published by Guava";
+    private final static String SUFFIX = "- published by Tom";
 
     public Task(Spliterator<Article> spliterator) {
         this.spliterator = spliterator;

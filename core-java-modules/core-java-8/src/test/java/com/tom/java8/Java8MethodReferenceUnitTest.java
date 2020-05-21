@@ -1,9 +1,8 @@
-package com.tom.java_8_features;
+package com.tom.java8;
 
-import lombok.extern.slf4j.Slf4j;
+import com.tom.java_8_features.User;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.platform.commons.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.stream.Stream;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@Slf4j
 public class Java8MethodReferenceUnitTest {
 
     private List<String> list;
@@ -61,10 +59,9 @@ public class Java8MethodReferenceUnitTest {
 
     @Test
     public void checkConstructorReferences_whenWork_thenCorrect() {
-        Stream<User> stream = list.stream().filter(StringUtils::isNotBlank).map(User::new);
+        Stream<User> stream = list.stream().map(User::new);
         List<User> userList = stream.collect(Collectors.toList());
-        log.info("{}", userList);
-        assertEquals(userList.size(), list.size() - 2);
+        assertEquals(userList.size(), list.size());
         assertTrue(userList.get(0) instanceof User);
     }
 }

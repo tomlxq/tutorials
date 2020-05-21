@@ -103,7 +103,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -378,7 +378,7 @@
                 <module>core-java-modules/core-java-collections</module>
 
                 <module>core-java-modules/core-java-8</module>
-                <!--  <module>spring-concurrent-modules/spring-threads</module>-->
+                <module>core-java-modules/core-java-streams-3</module>
             </modules>
 
         </profile>
@@ -1463,7 +1463,7 @@
         <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <!-- <maven-pmd-plugin.version>3.9.0</maven-pmd-plugin.version> -->
         <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
-        <lombok.version>1.16.12</lombok.version>
+        <lombok.version>1.18.8</lombok.version>
         <h2.version>1.4.200</h2.version>
         <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>
     </properties>
