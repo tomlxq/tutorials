@@ -17,10 +17,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Controller
 @RequestMapping(value = "/vehicles", method = RequestMethod.GET)
 public class VehicleController {
-    @RequestMapping("/home")
-    public String home() {
-        return "home";
-    }
 
     @CrossOrigin
     @ResponseBody
@@ -29,6 +25,10 @@ public class VehicleController {
         return "Hello World!";
     }
 
+    @RequestMapping("/home")
+    public String home() {
+        return "home";
+    }
 
     @PostMapping("/save")
     public void saveVehicle(@RequestBody Vehicle vehicle) {
@@ -39,21 +39,10 @@ public class VehicleController {
         return null;
     }
 
-    /*@RequestMapping("/{id}")
-    public Vehicle getVehicle(@PathVariable long id) {
-        return null;
-    }
-
-    @RequestMapping("/{id}")
-    public Vehicle getVehicle(@PathVariable(required = false) long id) {
-        return null;
-    }*/
-
     @RequestMapping
     public Vehicle getVehicleByParam(@RequestParam("id") long id) {
         return null;
     }
-
 
     @RequestMapping("/buy")
     public Car buyCar(@RequestParam(defaultValue = "5") int seatCount) {
