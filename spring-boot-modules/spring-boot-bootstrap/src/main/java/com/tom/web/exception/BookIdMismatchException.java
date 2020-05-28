@@ -1,11 +1,5 @@
 package com.tom.web.exception;
 
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/4/25
- */
 public class BookIdMismatchException extends RuntimeException {
 
     public BookIdMismatchException() {

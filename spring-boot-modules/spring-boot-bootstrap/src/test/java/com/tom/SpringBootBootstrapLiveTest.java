@@ -14,16 +14,9 @@ import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/4/25
- */
 public class SpringBootBootstrapLiveTest {
 
-
-    private static final String API_ROOT = "http://localhost:8081/api/books";
+    private static final String API_ROOT = "http://localhost:8080/api/books";
 
     @Test
     public void whenGetAllBooks_thenOK() {
@@ -132,4 +125,5 @@ public class SpringBootBootstrapLiveTest {
         return API_ROOT + "/" + response.jsonPath()
                 .get("id");
     }
+
 }

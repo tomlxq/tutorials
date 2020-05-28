@@ -1,11 +1,3 @@
-
-
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/4/25
- */
 package com.tom.web.exception;
 
 public class BookNotFoundException extends RuntimeException {

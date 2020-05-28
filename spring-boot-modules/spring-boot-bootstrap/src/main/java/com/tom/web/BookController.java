@@ -1,4 +1,4 @@
-package com.tom.web.controller;
+package com.tom.web;
 
 import com.tom.persistence.model.Book;
 import com.tom.persistence.repo.BookRepository;
@@ -18,12 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * 功能描述
- *
- * @author TomLuo
- * @date 2020/4/25
- */
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
@@ -32,17 +26,17 @@ public class BookController {
     private BookRepository bookRepository;
 
     @GetMapping
-    public Iterable findAll() {
+    public Iterable<Book> findAll() {
         return bookRepository.findAll();
     }
 
     @GetMapping("/title/{bookTitle}")
-    public List findByTitle(@PathVariable String bookTitle) {
+    public List<Book> findByTitle(@PathVariable String bookTitle) {
         return bookRepository.findByTitle(bookTitle);
     }
 
     @GetMapping("/{id}")
-    public Book findOne(@PathVariable Long id) {
+    public Book findOne(@PathVariable long id) {
         return bookRepository.findById(id)
                 .orElseThrow(BookNotFoundException::new);
     }
@@ -50,18 +44,19 @@ public class BookController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Book create(@RequestBody Book book) {
-        return bookRepository.save(book);
+        Book book1 = bookRepository.save(book);
+        return book1;
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable long id) {
         bookRepository.findById(id)
                 .orElseThrow(BookNotFoundException::new);
         bookRepository.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public Book updateBook(@RequestBody Book book, @PathVariable Long id) {
+    public Book updateBook(@RequestBody Book book, @PathVariable long id) {
         if (book.getId() != id) {
             throw new BookIdMismatchException();
         }
