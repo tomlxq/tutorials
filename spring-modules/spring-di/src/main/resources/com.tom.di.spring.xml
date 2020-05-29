@@ -28,6 +28,9 @@
     <bean id="indexApp" class="com.tom.di.spring.IndexApp">
         <property name="service" ref="indexService"/>
     </bean>
+    <bean id="indexAppWithConstructor" class="com.tom.di.spring.IndexApp">
+        <constructor-arg ref="indexService"/>
+    </bean>
 
     <bean id="indexAppWithStaticFactory" class="com.tom.di.spring.IndexApp">
         <property name="service" ref="messageServiceFromStaticFactory"/>

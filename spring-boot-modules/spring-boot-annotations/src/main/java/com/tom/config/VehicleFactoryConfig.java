@@ -1,5 +1,6 @@
-package com.tom.annotations;
+package com.tom.config;
 
+import com.tom.annotations.Engine;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,5 +27,6 @@ public class VehicleFactoryConfig {
     public Engine engine() {
         return new Engine();
     }
+
 
 }
