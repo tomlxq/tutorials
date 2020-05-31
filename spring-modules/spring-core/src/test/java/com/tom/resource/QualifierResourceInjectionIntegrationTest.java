@@ -19,7 +19,6 @@ import static org.junit.Assert.assertNotNull;
         loader = AnnotationConfigContextLoader.class,
         classes = ApplicationContextTestResourceQualifier.class)
 public class QualifierResourceInjectionIntegrationTest {
-
     @Resource
     @Qualifier("defaultFile")
     private File dependency1;
@@ -27,6 +26,7 @@ public class QualifierResourceInjectionIntegrationTest {
     @Resource
     @Qualifier("namedFile")
     private File dependency2;
+
 
     @Test
     public void givenResourceAnnotation_WhenField_ThenDependency1Valid() {

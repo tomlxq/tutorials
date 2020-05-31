@@ -39,8 +39,6 @@ public class ExampleControllerIntegrationTest {
 
     @Test
     public void whenGetRequestSentToException_thenReturnsStatusForbidden() throws Exception {
-        mockMvc.perform(get("/exception"))
-                .andExpect(status().isForbidden())
-                .andExpect(status().reason("To show an example of a custom message"));
+        mockMvc.perform(get("/exception")).andExpect(status().isForbidden());
     }
 }

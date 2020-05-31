@@ -22,9 +22,18 @@ public class FieldResourceInjectionIntegrationTest {
     @Resource(name = "namedFile")
     private File defaultFile;
 
+    @Resource
+    private File defaultFileMatchByType;
+
     @Test
     public void givenResourceAnnotation_WhenOnField_ThenDependencyValid() {
         assertNotNull(defaultFile);
         assertEquals("namedFile.txt", defaultFile.getName());
+    }
+
+    @Test
+    public void givenResourceAnnotation_WhenOnField_ThenDependencyMatchByType() {
+        assertNotNull(defaultFileMatchByType);
+        assertEquals("namedFile.txt", defaultFileMatchByType.getName());
     }
 }

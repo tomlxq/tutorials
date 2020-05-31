@@ -38,8 +38,8 @@ public class CreateNavMenuUnitTest {
         //final List<String> back_to_basics = List.of("Spring Boot", "Boot Basics");
         //String filename = "1.Spring Boot教程–引导一个简单的应用程序";
         // final List<String> back_to_basics = List.of("Spring Tutorial", "Basics of Spring/Spring Exceptions/Spring Beans Exceptions");
-        final List<String> back_to_basics = List.of("Spring Tutorial", "Basics of Spring");
-        String filename = "12.将Spring @Value与默认值一起使用";
+        final List<String> back_to_basics = List.of("Spring Tutorial", "Spring on the Web");
+        String filename = "1.Spring RequestMapping";
 
         initFile(back_to_basics, filename);
     }

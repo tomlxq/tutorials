@@ -1,8 +1,7 @@
 package com.tom.properties.value;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -14,6 +13,7 @@ import java.util.Map;
 
 @Configuration
 @PropertySource(name = "myProperties", value = "values.properties")
+@Data
 public class ValuesApp {
 
     @Value("string value")
@@ -67,11 +67,6 @@ public class ValuesApp {
     @Value("#{systemProperties}")
     private Map<String, String> systemPropertiesMap;
 
-    public static void main(String[] args) {
-        System.setProperty("systemValue", "Some system parameter value");
-        System.setProperty("priority", "System property");
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ValuesApp.class);
-    }
 
     @Bean
     public SomeBean someBean() {

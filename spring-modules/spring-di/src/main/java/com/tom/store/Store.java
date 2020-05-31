@@ -1,24 +1,15 @@
 package com.tom.store;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
+@Data
+@NoArgsConstructor
 public class Store {
-
     @Autowired
     private Item item;
-
-    public Store() {
-    }
-
     public Store(Item item) {
-        this.item = item;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
         this.item = item;
     }
 }
