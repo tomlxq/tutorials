@@ -6,9 +6,7 @@
     <groupId>com.tom</groupId>
     <artifactId>parent-modules</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-boot-modules/spring-boot-properties</module>
-    </modules>
+
 
     <name>parent-modules</name>
     <packaging>pom</packaging>
@@ -382,6 +380,8 @@
 
                 <module>core-java-modules/core-java-8</module>
                 <module>core-java-modules/core-java-streams-3</module>
+                <module>spring-mvc-modules/spring-mvc-basics</module>
+                <module>spring-boot-modules/spring-boot-rest</module>
             </modules>
 
         </profile>

@@ -50,11 +50,6 @@ public class FooMappingExamplesController {
         return "Post some Foos";
     }
 
-    @RequestMapping(value = "/foos", method = RequestMethod.GET)
-    @ResponseBody
-    public String getFoosBySimplePath1() {
-        return "Get some Foos";
-    }
     // with headers
 
     @RequestMapping(value = "/foos", headers = "key=val")
@@ -69,19 +64,18 @@ public class FooMappingExamplesController {
         return "Get some Foos with Header";
     }
 
-    @RequestMapping(value = "/foos", method = RequestMethod.GET, headers = "Accept=application/json")
+    @RequestMapping(value = "/foosOld", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public String getFoosAsJsonFromBrowser() {
+    public String getFoosAsJsonFromBrowser2() {
         return "Get some Foos with Header Old";
     }
 
-
-
     @RequestMapping(value = "/foos", produces = {"application/json", "application/xml"})
     @ResponseBody
-    public String getFoosAsJsonFromREST() {
+    public String getFoosAsJsonFromBrowser() {
         return "Get some Foos with Header New";
     }
+
     // advanced - multiple mappings
 
     @RequestMapping(value = {"/advanced/bars", "/advanced/foos"})
@@ -90,7 +84,7 @@ public class FooMappingExamplesController {
         return "Advanced - Get some Foos or Bars";
     }
 
-    @RequestMapping(value = "*")
+    @RequestMapping(value = "*", method = RequestMethod.GET)
     @ResponseBody
     public String getFallback() {
         return "Fallback for GET Requests";
@@ -117,11 +111,11 @@ public class FooMappingExamplesController {
 
     // uncomment for exception of type java.lang.IllegalStateException: Ambiguous mapping
 
-    // @GetMapping(value = "foos/duplicate" )
-    // public String duplicateEx() {
-    // return "Duplicate";
-    // }
-
+    /*   @GetMapping(value = "foos/duplicate")
+       public String duplicateEx() {
+           return "Duplicate";
+       }
+   */
     @GetMapping(value = "foos/duplicate", produces = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> duplicateXml() {
         return new ResponseEntity<>("<message>Duplicate</message>", HttpStatus.OK);
