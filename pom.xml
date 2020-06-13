@@ -380,7 +380,7 @@
 
                 <module>core-java-modules/core-java-8</module>
                 <module>core-java-modules/core-java-streams-3</module>
-                <module>spring-mvc-modules/spring-mvc-basics</module>
+                <module>spring-mvc-modules/spring-mvc-basics-2</module>
                 <module>spring-boot-modules/spring-boot-rest</module>
             </modules>
 
