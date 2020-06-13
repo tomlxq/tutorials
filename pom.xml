@@ -110,7 +110,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.9</version>
+            <version>1.2.31</version>
         </dependency>
     </dependencies>
 
@@ -380,7 +380,7 @@
 
                 <module>core-java-modules/core-java-8</module>
                 <module>core-java-modules/core-java-streams-3</module>
-                <module>spring-mvc-modules/spring-mvc-basics</module>
+                <module>spring-mvc-modules/spring-mvc-basics-2</module>
                 <module>spring-boot-modules/spring-boot-rest</module>
             </modules>
 
