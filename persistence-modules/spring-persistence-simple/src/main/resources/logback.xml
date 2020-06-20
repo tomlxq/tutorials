@@ -8,12 +8,12 @@
     </appender>
 
     <logger name="org.springframework" level="WARN"/>
-    <logger name="org.springframework.transaction" level="WARN"/>
+    <logger name="org.springframework.transaction" level="TRACE"/>
 
     <!-- in order to debug some marshalling issues, this needs to be TRACE -->
     <logger name="org.springframework.web.servlet.mvc" level="WARN"/>
 
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

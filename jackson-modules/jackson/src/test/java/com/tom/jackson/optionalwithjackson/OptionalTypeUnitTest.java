@@ -1,8 +1,10 @@
 package com.tom.jackson.optionalwithjackson;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.util.Optional;
 import static io.restassured.path.json.JsonPath.from;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Slf4j
 public class OptionalTypeUnitTest {
 
     ObjectMapper mapper = new ObjectMapper().registerModule(new Jdk8Module());
@@ -24,7 +27,7 @@ public class OptionalTypeUnitTest {
         book.setSubTitle(Optional.of(subTitle));
 
         String result = mapper.writeValueAsString(book);
-
+        log.info(result);
         assertThat(from(result).getString("subTitle")).isEqualTo(subTitle);
     }
 
@@ -47,7 +50,7 @@ public class OptionalTypeUnitTest {
         String book = "{ \"title\": \"Oliver Twist\", \"subTitle\": \"" + subTitle + "\" }";
 
         Book result = mapper.readValue(book, Book.class);
-
+        log.info("{}", JSON.toJSONString(result, true));
         assertThat(result.getSubTitle()).isEqualTo(Optional.of(subTitle));
     }
 
