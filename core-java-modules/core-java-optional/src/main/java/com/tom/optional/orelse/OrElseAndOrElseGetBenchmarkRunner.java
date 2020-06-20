@@ -1,5 +1,3 @@
-
-
 package com.tom.optional.orelse;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -28,12 +26,12 @@ public class OrElseAndOrElseGetBenchmarkRunner {
 
     @Benchmark
     public String orElseBenchmark() {
-        return orElsevsOrElseGet.getNameUsingOrElse("guava");
+        return orElsevsOrElseGet.getNameUsingOrElse("tom");
     }
 
     @Benchmark
     public String orElseGetBenchmark() {
-        return orElsevsOrElseGet.getNameUsingOrElseGet("guava");
+        return orElsevsOrElseGet.getNameUsingOrElseGet("tom");
     }
 
 }

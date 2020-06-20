@@ -1,4 +1,3 @@
-
 package com.tom.optional.orelse;
 
 import org.junit.Test;
@@ -10,15 +9,14 @@ import static org.junit.Assert.assertTrue;
 
 public class OrElseAndOrElseGetUnitTest {
 
-    private OrElseAndOrElseGet orElsevsOrElseGet = new OrElseAndOrElseGet();
-
     private static final Logger LOG = LoggerFactory.getLogger(OrElseAndOrElseGetUnitTest.class);
+    private OrElseAndOrElseGet orElsevsOrElseGet = new OrElseAndOrElseGet();
 
     @Test
     public void givenNonEmptyOptional_whenOrElseUsed_thenGivenStringReturned() {
         LOG.info("In givenNonEmptyOptional_whenOrElseUsed_thenGivenStringReturned()");
-        String name = orElsevsOrElseGet.getNameUsingOrElse("guava");
-        assertEquals(name, "guava");
+        String name = orElsevsOrElseGet.getNameUsingOrElse("tom");
+        assertEquals(name, "tom");
     }
 
     @Test
@@ -31,8 +29,8 @@ public class OrElseAndOrElseGetUnitTest {
     @Test
     public void givenNonEmptyOptional_whenOrElseGetUsed_thenGivenStringReturned() {
         LOG.info("In givenNonEmptyOptional_whenOrElseGetUsed_thenGivenStringReturned()");
-        String name = orElsevsOrElseGet.getNameUsingOrElseGet("guava");
-        assertEquals(name, "guava");
+        String name = orElsevsOrElseGet.getNameUsingOrElseGet("tom");
+        assertEquals(name, "tom");
     }
 
     @Test

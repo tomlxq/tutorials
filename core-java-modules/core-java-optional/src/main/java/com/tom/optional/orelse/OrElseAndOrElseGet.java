@@ -1,5 +1,3 @@
-
-
 package com.tom.optional.orelse;
 
 import org.slf4j.Logger;
@@ -12,9 +10,8 @@ import java.util.Random;
 
 public class OrElseAndOrElseGet {
 
-    public static List<String> names = Arrays.asList("John", "Jones", "Kelly", "Cristina", "Raven");
-
     private static final Logger LOG = LoggerFactory.getLogger(OrElseAndOrElseGet.class);
+    public static List<String> names = Arrays.asList("John", "Jones", "Kelly", "Cristina", "Raven");
 
     public String getRandomName() {
         LOG.info("getRandomName() method - start");

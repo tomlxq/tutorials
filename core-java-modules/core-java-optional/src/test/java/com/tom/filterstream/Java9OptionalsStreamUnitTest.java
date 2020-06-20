@@ -48,16 +48,16 @@ public class Java9OptionalsStreamUnitTest {
     }
 
 
-    //    Uncomment code when code base is compatible with Java 9
-    @Test
-    public void filterOutPresentOptionalsWithJava9() {
-        assertEquals(4, listOfOptionals.size());
-
-        List<String> filteredList = listOfOptionals.stream().flatMap(Optional::stream).collect(Collectors.toList());
-
-        assertEquals(2, filteredList.size());
-        assertEquals("foo", filteredList.get(0));
-        assertEquals("bar", filteredList.get(1));
-    }
+//    Uncomment code when code base is compatible with Java 9
+//    @Test
+//    public void filterOutPresentOptionalsWithJava9() {
+//        assertEquals(4, listOfOptionals.size());
+//
+//        List<String> filteredList = listOfOptionals.stream().flatMap(Optional::stream).collect(Collectors.toList());
+//
+//        assertEquals(2, filteredList.size());
+//        assertEquals("foo", filteredList.get(0));
+//        assertEquals("bar", filteredList.get(1));
+//    }
 
 }

@@ -26,7 +26,7 @@ public class OptionalUnitTest {
 
     @Test
     public void givenNonNull_whenCreatesNonNullable_thenCorrect() {
-        String name = "guava";
+        String name = "tom";
         Optional<String> opt = Optional.of(name);
         assertTrue(opt.isPresent());
     }
@@ -39,14 +39,14 @@ public class OptionalUnitTest {
 
     @Test
     public void givenNonNull_whenCreatesOptional_thenCorrect() {
-        String name = "guava";
+        String name = "tom";
         Optional<String> opt = Optional.of(name);
         assertTrue(opt.isPresent());
     }
 
     @Test
     public void givenNonNull_whenCreatesNullable_thenCorrect() {
-        String name = "guava";
+        String name = "tom";
         Optional<String> opt = Optional.ofNullable(name);
         assertTrue(opt.isPresent());
     }
@@ -61,7 +61,7 @@ public class OptionalUnitTest {
 
     @Test
     public void givenOptional_whenIsPresentWorks_thenCorrect() {
-        Optional<String> opt = Optional.of("guava");
+        Optional<String> opt = Optional.of("Tom");
         assertTrue(opt.isPresent());
 
         opt = Optional.ofNullable(null);
@@ -71,22 +71,31 @@ public class OptionalUnitTest {
     // Condition Action With ifPresent()
     @Test
     public void givenOptional_whenIfPresentWorks_thenCorrect() {
-        Optional<String> opt = Optional.of("guava");
+        Optional<String> opt = Optional.of("tom");
         opt.ifPresent(name -> LOG.debug("{}", name.length()));
     }
 
     // returning Value With get()
     @Test
     public void givenOptional_whenGetsValue_thenCorrect() {
-        Optional<String> opt = Optional.of("guava");
+        Optional<String> opt = Optional.of("tom");
         String name = opt.get();
-        assertEquals("guava", name);
+        assertEquals("tom", name);
     }
 
     @Test(expected = NoSuchElementException.class)
     public void givenOptionalWithNull_whenGetThrowsException_thenCorrect() {
         Optional<String> opt = Optional.ofNullable(null);
         String name = opt.get();
+    }
+
+    @Test
+    public void givenAnEmptyOptional_thenIsEmptyBehavesAsExpected() {
+        Optional<String> opt = Optional.of("Tom");
+        assertTrue(opt.isPresent());
+
+        opt = Optional.ofNullable(null);
+        assertFalse(opt.isPresent());
     }
 
     // Conditional Return With filter()
@@ -150,7 +159,7 @@ public class OptionalUnitTest {
 
     @Test
     public void givenOptional_whenMapWorks_thenCorrect2() {
-        String name = "guava";
+        String name = "tom";
         Optional<String> nameOptional = Optional.of(name);
 
         int len = nameOptional.map(String::length)
@@ -263,9 +272,9 @@ public class OptionalUnitTest {
 //    Uncomment code when code base is compatible with Java 11
 //    @Test
 //    public void givenAnEmptyOptional_thenIsEmptyBehavesAsExpected() {
-//        Optional<String> opt = Optional.of("guava");
+//        Optional<String> opt = Optional.of("Tom");
 //        assertFalse(opt.isEmpty());
-//
+//     
 //        opt = Optional.ofNullable(null);
 //        assertTrue(opt.isEmpty());
 //    }

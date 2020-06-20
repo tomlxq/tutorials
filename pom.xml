@@ -377,10 +377,12 @@
                 <module>parent-spring-5</module>
                 <module>parent-java</module>
                 <module>persistence-modules</module>
-                <module>core-java-modules/core-java-collections</module>
+                <module>core-java-modules</module>
+                <module>jackson-modules</module>
+             <!--   <module>core-java-modules/core-java-collections</module>-->
 
-                <module>core-java-modules/core-java-8</module>
-                <module>core-java-modules/core-java-streams-3</module>
+              <!--  <module>core-java-modules/core-java-8</module>
+                <module>core-java-modules/core-java-streams-3</module>-->
                 <module>spring-mvc-modules/spring-mvc-basics-2</module>
                 <module>spring-boot-modules/spring-boot-rest</module>
             </modules>

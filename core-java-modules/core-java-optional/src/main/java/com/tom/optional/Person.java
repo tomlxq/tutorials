@@ -1,6 +1,5 @@
 package com.tom.optional;
 
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -13,30 +12,6 @@ public class Person {
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-
-    public Optional<String> getName() {
-        return Optional.ofNullable(name);
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Optional<Integer> getAge() {
-        return Optional.of(age);
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Optional<String> getPassword() {
-        return Optional.ofNullable(password);
     }
 
     public static List<Person> search(List<Person> people, String name, Optional<Integer> age) {
@@ -71,5 +46,29 @@ public class Person {
                 .filter(p -> p.getName().equals(name))
                 .filter(p -> p.getAge().get().intValue() >= age)
                 .collect(Collectors.toList());
+    }
+
+    public Optional<String> getName() {
+        return Optional.ofNullable(name);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Optional<Integer> getAge() {
+        return Optional.of(age);
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Optional<String> getPassword() {
+        return Optional.ofNullable(password);
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

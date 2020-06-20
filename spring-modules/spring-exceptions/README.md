@@ -3,9 +3,9 @@
 This module contains articles about Spring `Exception`s
 
 ### Relevant articles: 
-- [Spring BeanCreationException](https://www.tom.com/spring-beancreationexception)
-- [Spring DataIntegrityViolationException](https://www.tom.com/spring-dataIntegrityviolationexception)
-- [Spring BeanDefinitionStoreException](https://www.tom.com/spring-beandefinitionstoreexception)
-- [Spring NoSuchBeanDefinitionException](https://www.tom.com/spring-nosuchbeandefinitionexception)
-- [Guide to Spring NonTransientDataAccessException](https://www.tom.com/nontransientdataaccessexception)
-- [Hibernate Mapping Exception – Unknown Entity](https://www.tom.com/hibernate-mappingexception-unknown-entity)
+- [Spring BeanCreationException](https://github.com/tomlxq/tutorials/spring-beancreationexception)
+- [Spring DataIntegrityViolationException](https://github.com/tomlxq/tutorials/spring-dataIntegrityviolationexception)
+- [Spring BeanDefinitionStoreException](https://github.com/tomlxq/tutorials/spring-beandefinitionstoreexception)
+- [Spring NoSuchBeanDefinitionException](https://github.com/tomlxq/tutorials/spring-nosuchbeandefinitionexception)
+- [Guide to Spring NonTransientDataAccessException](https://github.com/tomlxq/tutorials/nontransientdataaccessexception)
+- [Hibernate Mapping Exception – Unknown Entity](https://github.com/tomlxq/tutorials/hibernate-mappingexception-unknown-entity)
