@@ -4,9 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>parent-java</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-exceptions</module>
-    </modules>
     <name>parent-java</name>
     <packaging>pom</packaging>
     <description>Parent for all java modules</description>

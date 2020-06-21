@@ -6,8 +6,6 @@
     <groupId>com.tom</groupId>
     <artifactId>parent-modules</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-
-
     <name>parent-modules</name>
     <packaging>pom</packaging>
 
@@ -33,11 +31,7 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${org.slf4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${org.slf4j.version}</version>
-        </dependency>
+
         <!-- test -->
         <dependency>
             <groupId>junit</groupId>
@@ -76,12 +70,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>net.bytebuddy</groupId>
-            <artifactId>byte-buddy</artifactId>
-            <version>${byte-buddy.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
@@ -96,12 +84,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.15.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
@@ -110,7 +92,17 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.31</version>
+            <version>1.2.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.0-alpha1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
         </dependency>
     </dependencies>
 
@@ -167,43 +159,43 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <!--    <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>${maven-pmd-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.tom.pmd</groupId>
-                            <artifactId>custom-pmd</artifactId>
-                            <version>${custom-pmd.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <failurePriority>5</failurePriority>
-                        <aggregate>false</aggregate>
-                        <failOnViolation>true</failOnViolation>
-                        <verbose>true</verbose>
-                        <linkXRef>true</linkXRef>
-                        <includeTests>true</includeTests>
-                        <sourceEncoding>UTF-8</sourceEncoding>
-                        <targetJdk>${java.version}</targetJdk>
-                        <rulesets>
-                            <ruleset>${tutorialsproject.basedir}/tom-pmd-rules.xml</ruleset>
-                        </rulesets>
-                        <excludeRoots>
-                            <excludeRoot>target/generated-sources</excludeRoot>
-                        </excludeRoots>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>-->
-            <!--<plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven-pmd-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.tom.pmd</groupId>
+                        <artifactId>custom-pmd</artifactId>
+                        <version>1.0.0</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <failurePriority>5</failurePriority>
+                    <aggregate>false</aggregate>
+                    <failOnViolation>true</failOnViolation>
+                    <verbose>true</verbose>
+                    <linkXRef>true</linkXRef>
+                    <includeTests>true</includeTests>
+                    <sourceEncoding>UTF-8</sourceEncoding>
+                    <targetJdk>${java.version}</targetJdk>
+                    <rulesets>
+                        <ruleset>${tutorialsproject.basedir}/tom-pmd-rules.xml</ruleset>
+                    </rulesets>
+                    <excludeRoots>
+                        <excludeRoot>target/generated-sources</excludeRoot>
+                    </excludeRoots>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.commonjava.maven.plugins</groupId>
                 <artifactId>directory-maven-plugin</artifactId>
                 <version>${directory-maven-plugin.version}</version>
@@ -223,29 +215,29 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>-->
-            <!-- <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-install-plugin</artifactId>
-                 <version>${maven-install-plugin.version}</version>
-                 <configuration>
-                     <groupId>org.tom.pmd</groupId>
-                     <artifactId>custom-pmd</artifactId>
-                     <version>${custom-pmd.version}</version>
-                     <packaging>jar</packaging>
-                     <file>${tutorialsproject.basedir}/custom-pmd-${custom-pmd.version}.jar</file>
-                     <generatePom>true</generatePom>
-                 </configuration>
-                 <executions>
-                     <execution>
-                         <id>install-jar-lib</id>
-                         <goals>
-                             <goal>install-file</goal>
-                         </goals>
-                         <phase>validate</phase>
-                     </execution>
-                 </executions>
-             </plugin>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven-install-plugin.version}</version>
+                <configuration>
+                    <groupId>org.tom.pmd</groupId>
+                    <artifactId>custom-pmd</artifactId>
+                    <version>${custom-pmd.version}</version>
+                    <packaging>jar</packaging>
+                    <file>${tutorialsproject.basedir}/custom-pmd-${custom-pmd.version}.jar</file>
+                    <generatePom>true</generatePom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>install-jar-lib</id>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${maven-war-plugin.version}</version>
@@ -263,55 +255,55 @@
             <plugins>
                 <!--This plugin's configuration is used to store Eclipse m2e settings
                     only. It has no influence on the Maven build itself. -->
-                <!--  <plugin>
-                      <groupId>org.eclipse.m2e</groupId>
-                      <artifactId>lifecycle-mapping</artifactId>
-                      <version>1.0.0</version>
-                      <configuration>
-                          <lifecycleMappingMetadata>
-                              <pluginExecutions>
-                                  <pluginExecution>
-                                      <pluginExecutionFilter>
-                                          <groupId>
-                                              org.commonjava.maven.plugins
-                                          </groupId>
-                                          <artifactId>
-                                              directory-maven-plugin
-                                          </artifactId>
-                                          <versionRange>
-                                              [0.3.1,)
-                                          </versionRange>
-                                          <goals>
-                                              <goal>directory-of</goal>
-                                          </goals>
-                                      </pluginExecutionFilter>
-                                      <action>
-                                          <ignore></ignore>
-                                      </action>
-                                  </pluginExecution>
-                                  <pluginExecution>
-                                      <pluginExecutionFilter>
-                                          <groupId>
-                                              org.apache.maven.plugins
-                                          </groupId>
-                                          <artifactId>
-                                              maven-install-plugin
-                                          </artifactId>
-                                          <versionRange>
-                                              [2.5.1,)
-                                          </versionRange>
-                                          <goals>
-                                              <goal>install-file</goal>
-                                          </goals>
-                                      </pluginExecutionFilter>
-                                      <action>
-                                          <ignore></ignore>
-                                      </action>
-                                  </pluginExecution>
-                              </pluginExecutions>
-                          </lifecycleMappingMetadata>
-                      </configuration>
-                  </plugin>-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.commonjava.maven.plugins
+                                        </groupId>
+                                        <artifactId>
+                                            directory-maven-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [0.3.1,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>directory-of</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.apache.maven.plugins
+                                        </groupId>
+                                        <artifactId>
+                                            maven-install-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [2.5.1,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>install-file</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -319,76 +311,6 @@
     <profiles>
 
         <profile>
-            <id>default-abc</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${maven-surefire-plugin.version}</version>
-                        <configuration>
-                            <forkCount>3</forkCount>
-                            <reuseForks>true</reuseForks>
-                            <includes>
-                                <include>SpringContextTest</include>
-                                <include>**/*UnitTest</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/*IntegrationTest.java</exclude>
-                                <exclude>**/*IntTest.java</exclude>
-                                <exclude>**/*LongRunningUnitTest.java</exclude>
-                                <exclude>**/*ManualTest.java</exclude>
-                                <exclude>**/JdbcTest.java</exclude>
-                                <exclude>**/*LiveTest.java</exclude>
-                            </excludes>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.cargo</groupId>
-                        <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>${cargo-maven2-plugin.version}</version>
-                        <configuration>
-                            <!--<wait>true</wait> caused errors on commit -->
-                            <container>
-                                <containerId>tomcat8x</containerId>
-                                <type>embedded</type>
-                                <systemProperties>
-                                    <!-- <provPersistenceTarget>cargo</provPersistenceTarget> -->
-                                </systemProperties>
-                            </container>
-                            <configuration>
-                                <properties>
-                                    <cargo.servlet.port>8082</cargo.servlet.port>
-                                </properties>
-                            </configuration>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-
-            <modules>
-                <!--       <module>parent-boot-1</module>-->
-                <module>parent-boot-2</module>
-                <module>parent-spring-4</module>
-                <module>parent-spring-5</module>
-                <module>parent-java</module>
-                <module>persistence-modules</module>
-                <module>core-java-modules</module>
-                <module>jackson-modules</module>
-             <!--   <module>core-java-modules/core-java-collections</module>-->
-
-              <!--  <module>core-java-modules/core-java-8</module>
-                <module>core-java-modules/core-java-streams-3</module>-->
-                <module>spring-mvc-modules/spring-mvc-basics-2</module>
-                <module>spring-boot-modules/spring-boot-rest</module>
-            </modules>
-
-        </profile>
-        <!--<profile>
             <id>default-first</id>
             <build>
                 <plugins>
@@ -447,7 +369,6 @@
                 <module>apache-bval</module>
                 <module>apache-curator</module>
                 <module>apache-cxf</module>
-                <module>apache-fop</module>
                 <module>apache-geode</module>
                 <module>apache-meecrowave</module>
                 <module>apache-olingo/olingo2</module>
@@ -470,6 +391,7 @@
                 <module>atomix</module>
 
                 <module>aws</module>
+                <module>aws-app-sync</module>
                 <module>aws-lambda</module>
                 <module>aws-reactive</module>
 
@@ -480,11 +402,10 @@
                 <module>bazel</module>
                 <module>blade</module>
                 <module>bootique</module>
-
-                <module>cas</module>
+                <!-- <module>cas</module> --> <!-- Not a maven project -->
                 <module>cdi</module>
                 <module>checker-plugin</module>
-                &lt;!&ndash; <module>clojure</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>clojure</module> --> <!-- Not a maven project -->
                 <module>cloud-foundry-uaa</module>
                 <module>code-generation</module>
 
@@ -501,7 +422,7 @@
                 <module>dagger</module>
                 <module>data-structures</module>
                 <module>ddd</module>
-                &lt;!&ndash; <module>ddd-modules</module>&ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 9 &ndash;&gt;
+                <!-- <module>ddd-modules</module>--> <!-- we haven't upgraded to Java 9 -->
                 <module>deeplearning4j</module>
                 <module>disruptor</module>
                 <module>dozer</module>
@@ -517,9 +438,9 @@
                 <module>geotools</module>
                 <module>google-cloud</module>
                 <module>google-web-toolkit</module>
-                &lt;!&ndash; <module>gradle</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
-                &lt;!&ndash; <module>gradle-5</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
-                &lt;!&ndash; <module>grails</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>gradle</module> --> <!-- Not a maven project -->
+                <!-- <module>gradle-5</module> --> <!-- Not a maven project -->
+                <!-- <module>grails</module> --> <!-- Not a maven project -->
                 <module>graphql/graphql-java</module>
                 <module>grpc</module>
                 <module>gson</module>
@@ -529,7 +450,7 @@
                 <module>guava-collections-set</module>
                 <module>guava-io</module>
                 <module>guava-modules</module>
-                &lt;!&ndash; <module>guest</module> &ndash;&gt; &lt;!&ndash; not to be built as its for guest articles  &ndash;&gt;
+                <!-- <module>guest</module> --> <!-- not to be built as its for guest articles  -->
                 <module>guice</module>
 
                 <module>hazelcast</module>
@@ -547,15 +468,12 @@
 
                 <module>java-collections-conversions</module>
                 <module>java-collections-conversions-2</module>
-                <module>java-collections-maps</module>
-                <module>java-collections-maps-2</module>
-                &lt;!&ndash; <module>java-ee-8-security-api</module> &ndash;&gt; &lt;!&ndash; long running &ndash;&gt;
+                <module>java-collections-maps-3</module>
+                <!-- <module>java-ee-8-security-api</module> --> <!-- long running -->
 
                 <module>javafx</module>
                 <module>java-jdi</module>
                 <module>java-lite</module>
-                <module>java-math</module>
-                <module>java-math-2</module> &lt;!&ndash; Added for BAEL-3506 &ndash;&gt;
                 <module>java-numbers</module>
                 <module>java-numbers-2</module>
                 <module>java-numbers-3</module>
@@ -586,12 +504,13 @@
                 <module>jsoup</module>
                 <module>jta</module>
 
-                &lt;!&ndash; <module>kotlin-js</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>kotlin-js</module> --> <!-- Not a maven project -->
                 <module>kotlin-libraries</module>
                 <module>kotlin-libraries-2</module>
                 <module>kotlin-quasar</module>
 
-                &lt;!&ndash; <module>lagom</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>lagom</module> --> <!-- Not a maven project -->
+                <module>language-interop</module>
                 <module>libraries-2</module>
                 <module>libraries-3</module>
                 <module>libraries-apache-commons</module>
@@ -602,10 +521,13 @@
                 <module>libraries-data-db</module>
                 <module>libraries-data-io</module>
                 <module>libraries-http</module>
+                <module>libraries-http-2</module>
                 <module>libraries-io</module>
                 <module>libraries-primitive</module>
+                <module>libraries-rpc</module>
                 <module>libraries-security</module>
                 <module>libraries-server</module>
+                <module>libraries-server-2</module>
                 <module>libraries-testing</module>
                 <module>linkrest</module>
                 <module>logging-modules</module>
@@ -618,7 +540,7 @@
 
                 <module>maven-all</module>
                 <module>maven-archetype</module>
-                &lt;!&ndash; <module>maven-java-11</module> &ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 11 &ndash;&gt;
+                <!-- <module>maven-java-11</module> --> <!-- we haven't upgraded to Java 11 -->
                 <module>maven-polyglot</module>
 
                 <module>mesos-marathon</module>
@@ -626,11 +548,12 @@
                 <module>micronaut</module>
                 <module>microprofile</module>
                 <module>msf4j</module>
-                &lt;!&ndash; <module>muleesb</module> &ndash;&gt; &lt;!&ndash; Module broken, fixing in http://team.tom.com/browse/BAEL-20604 &ndash;&gt;
+                <!-- <module>muleesb</module> --> <!-- Module broken, fixing in http://team.tom.com/browse/BAEL-20604 -->
                 <module>mustache</module>
                 <module>mybatis</module>
 
                 <module>netflix-modules</module>
+                <!-- <module>netty</module> --> <!-- we haven't upgraded to Java 13 -->
                 <module>ninja</module>
                 <module>open-liberty</module>
 
@@ -643,14 +566,14 @@
                 <module>pdf</module>
                 <module>performance-tests</module>
                 <module>persistence-modules</module>
-                &lt;!&ndash; <module>play-framework</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>play-framework</module> --> <!-- Not a maven project -->
                 <module>protobuffer</module>
 
                 <module>quarkus</module>
                 <module>quarkus-extension</module>
 
                 <module>rabbitmq</module>
-                &lt;!&ndash; <module>raml</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>raml</module> --> <!-- Not a maven project -->
                 <module>ratpack</module>
                 <module>reactor-core</module>
                 <module>resteasy</module>
@@ -661,9 +584,12 @@
                 <module>rxjava-libraries</module>
                 <module>rxjava-observables</module>
                 <module>rxjava-operators</module>
+
+                <module>atomikos</module>
             </modules>
 
         </profile>
+
         <profile>
             <id>default-second</id>
             <build>
@@ -738,12 +664,13 @@
 
                 <module>spring-cloud</module>
                 <module>spring-cloud-bus</module>
-                &lt;!&ndash; <module>spring-cloud-cli</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>spring-cloud-cli</module> --> <!-- Not a maven project -->
                 <module>spring-cloud-data-flow</module>
 
                 <module>spring-core</module>
                 <module>spring-core-2</module>
                 <module>spring-core-3</module>
+                <module>spring-core-4</module>
                 <module>spring-cucumber</module>
 
                 <module>spring-data-rest</module>
@@ -824,11 +751,12 @@
                 <module>spring-threads</module>
                 <module>spring-thymeleaf</module>
                 <module>spring-thymeleaf-2</module>
+                <module>spring-thymeleaf-3</module>
 
                 <module>spring-vault</module>
                 <module>spring-vertx</module>
 
-                <module>spring-webflux-amqp</module> &lt;!&ndash; long &ndash;&gt;
+                <module>spring-webflux-amqp</module> <!-- long -->
                 <module>spring-websockets</module>
 
                 <module>static-analysis</module>
@@ -842,7 +770,7 @@
                 <module>twilio</module>
                 <module>twitter4j</module>
 
-                &lt;!&ndash; <module>undertow</module> &ndash;&gt; &lt;!&ndash; 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) &ndash;&gt;
+                <!-- <module>undertow</module> --> <!-- 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) -->
 
                 <module>vertx</module>
                 <module>vertx-and-rxjava</module>
@@ -900,10 +828,14 @@
                 <module>jhipster</module>
                 <module>jws</module>
 
-                <module>libraries</module> &lt;!&ndash; very long running &ndash;&gt;
+                <module>libraries</module> <!-- very long running -->
+                <module>libraries-4</module>
+                <module>libraries-5</module>
+                <module>libraries-6</module>
 
                 <module>vaadin</module>
                 <module>vavr</module>
+                <module>vavr-2</module>
             </modules>
         </profile>
 
@@ -959,7 +891,6 @@
                 <module>apache-bval</module>
                 <module>apache-curator</module>
                 <module>apache-cxf</module>
-                <module>apache-fop</module>
                 <module>apache-geode</module>
                 <module>apache-meecrowave</module>
                 <module>apache-olingo/olingo2</module>
@@ -992,11 +923,10 @@
                 <module>bazel</module>
                 <module>blade</module>
                 <module>bootique</module>
-
-                <module>cas</module>
+                <!-- <module>cas</module> --> <!-- Not a maven project -->
                 <module>cdi</module>
                 <module>checker-plugin</module>
-                &lt;!&ndash; <module>clojure</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>clojure</module> --> <!-- Not a maven project -->
                 <module>cloud-foundry-uaa</module>
                 <module>code-generation</module>
 
@@ -1013,7 +943,7 @@
                 <module>dagger</module>
                 <module>data-structures</module>
                 <module>ddd</module>
-                &lt;!&ndash; <module>ddd-modules</module>&ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 9 &ndash;&gt;
+                <!-- <module>ddd-modules</module>--> <!-- we haven't upgraded to Java 9 -->
                 <module>deeplearning4j</module>
                 <module>disruptor</module>
                 <module>dozer</module>
@@ -1029,9 +959,9 @@
                 <module>geotools</module>
                 <module>google-cloud</module>
                 <module>google-web-toolkit</module>
-                &lt;!&ndash; <module>gradle</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
-                &lt;!&ndash; <module>gradle-5</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
-                &lt;!&ndash; <module>grails</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>gradle</module> --> <!-- Not a maven project -->
+                <!-- <module>gradle-5</module> --> <!-- Not a maven project -->
+                <!-- <module>grails</module> --> <!-- Not a maven project -->
                 <module>graphql/graphql-java</module>
                 <module>grpc</module>
                 <module>gson</module>
@@ -1041,7 +971,7 @@
                 <module>guava-collections-set</module>
                 <module>guava-io</module>
                 <module>guava-modules</module>
-                &lt;!&ndash; <module>guest</module> &ndash;&gt; &lt;!&ndash; not to be built as its for guest articles  &ndash;&gt;
+                <!-- <module>guest</module> --> <!-- not to be built as its for guest articles  -->
                 <module>guice</module>
 
                 <module>hazelcast</module>
@@ -1059,15 +989,12 @@
 
                 <module>java-collections-conversions</module>
                 <module>java-collections-conversions-2</module>
-                <module>java-collections-maps</module>
-                <module>java-collections-maps-2</module>
-                &lt;!&ndash; <module>java-ee-8-security-api</module> &ndash;&gt; &lt;!&ndash; long running &ndash;&gt;
+                <module>java-collections-maps-3</module>
+                <!-- <module>java-ee-8-security-api</module> --> <!-- long running -->
 
                 <module>javafx</module>
                 <module>java-jdi</module>
                 <module>java-lite</module>
-                <module>java-math</module>
-                <module>java-math-2</module> &lt;!&ndash; Added for BAEL-3506 &ndash;&gt;
                 <module>java-numbers</module>
                 <module>java-numbers-2</module>
                 <module>java-numbers-3</module>
@@ -1097,14 +1024,15 @@
                 <module>jsoup</module>
                 <module>jta</module>
 
-                &lt;!&ndash; <module>kotlin-js</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>kotlin-js</module> --> <!-- Not a maven project -->
                 <module>kotlin-libraries</module>
                 <module>kotlin-libraries-2</module>
                 <module>kotlin-quasar</module>
 
-                &lt;!&ndash; <module>lagom</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>lagom</module> --> <!-- Not a maven project -->
                 <module>libraries-2</module>
                 <module>libraries-3</module>
+
                 <module>libraries-apache-commons</module>
                 <module>libraries-apache-commons-collections</module>
                 <module>libraries-apache-commons-io</module>
@@ -1113,10 +1041,12 @@
                 <module>libraries-data-db</module>
                 <module>libraries-data-io</module>
                 <module>libraries-http</module>
+                <module>libraries-http-2</module>
                 <module>libraries-io</module>
                 <module>libraries-primitive</module>
                 <module>libraries-security</module>
                 <module>libraries-server</module>
+                <module>libraries-server-2</module>
                 <module>libraries-testing</module>
                 <module>linkrest</module>
                 <module>logging-modules</module>
@@ -1129,7 +1059,7 @@
 
                 <module>maven-all</module>
                 <module>maven-archetype</module>
-                &lt;!&ndash; <module>maven-java-11</module> &ndash;&gt; &lt;!&ndash; we haven't upgraded to Java 11 &ndash;&gt;
+                <!-- <module>maven-java-11</module> --> <!-- we haven't upgraded to Java 11 -->
                 <module>maven-polyglot</module>
 
                 <module>mesos-marathon</module>
@@ -1137,11 +1067,12 @@
                 <module>micronaut</module>
                 <module>microprofile</module>
                 <module>msf4j</module>
-                &lt;!&ndash; <module>muleesb</module> &ndash;&gt; &lt;!&ndash; Module broken, fixing in http://team.tom.com/browse/BAEL-20604 &ndash;&gt;
+                <!-- <module>muleesb</module> --> <!-- Module broken, fixing in http://team.tom.com/browse/BAEL-20604 -->
                 <module>mustache</module>
                 <module>mybatis</module>
 
                 <module>netflix-modules</module>
+                <!-- <module>netty</module> --> <!-- we haven't upgraded to Java 13 -->
                 <module>ninja</module>
                 <module>open-liberty</module>
 
@@ -1154,14 +1085,14 @@
                 <module>pdf</module>
                 <module>performance-tests</module>
                 <module>persistence-modules</module>
-                &lt;!&ndash; <module>play-framework</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>play-framework</module> --> <!-- Not a maven project -->
                 <module>protobuffer</module>
 
                 <module>quarkus</module>
                 <module>quarkus-extension</module>
 
                 <module>rabbitmq</module>
-                &lt;!&ndash; <module>raml</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>raml</module> --> <!-- Not a maven project -->
                 <module>ratpack</module>
                 <module>reactor-core</module>
                 <module>resteasy</module>
@@ -1172,6 +1103,8 @@
                 <module>rxjava-libraries</module>
                 <module>rxjava-observables</module>
                 <module>rxjava-operators</module>
+
+                <module>atomikos</module>
             </modules>
 
         </profile>
@@ -1242,12 +1175,13 @@
 
                 <module>spring-cloud</module>
                 <module>spring-cloud-bus</module>
-                &lt;!&ndash; <module>spring-cloud-cli</module> &ndash;&gt; &lt;!&ndash; Not a maven project &ndash;&gt;
+                <!-- <module>spring-cloud-cli</module> --> <!-- Not a maven project -->
                 <module>spring-cloud-data-flow</module>
 
                 <module>spring-core</module>
                 <module>spring-core-2</module>
                 <module>spring-core-3</module>
+                <module>spring-core-4</module>
                 <module>spring-cucumber</module>
 
                 <module>spring-data-rest</module>
@@ -1295,6 +1229,7 @@
                 <module>spring-mvc-views</module>
                 <module>spring-mvc-webflow</module>
                 <module>spring-mvc-xml</module>
+                <module>spring-mvc-crash</module>
 
                 <module>spring-protobuf</module>
                 <module>spring-quartz</module>
@@ -1327,11 +1262,12 @@
 
                 <module>spring-thymeleaf</module>
                 <module>spring-thymeleaf-2</module>
+                <module>spring-thymeleaf-3</module>
 
                 <module>spring-vault</module>
                 <module>spring-vertx</module>
 
-                <module>spring-webflux-amqp</module> &lt;!&ndash; long &ndash;&gt;
+                <module>spring-webflux-amqp</module> <!-- long -->
                 <module>spring-websockets</module>
 
                 <module>static-analysis</module>
@@ -1345,7 +1281,7 @@
                 <module>twilio</module>
                 <module>twitter4j</module>
 
-                &lt;!&ndash; <module>undertow</module> &ndash;&gt; &lt;!&ndash; 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) &ndash;&gt;
+                <!-- <module>undertow</module> --> <!-- 19.11.2019 - disabling temporarily as it's causing a major issue with the build (TODO: create a jira to fix it) -->
 
                 <module>vertx</module>
                 <module>vertx-and-rxjava</module>
@@ -1357,6 +1293,7 @@
                 <module>wildfly</module>
                 <module>xml</module>
                 <module>xstream</module>
+                <!--                <module>libraries-concurrency</module>--> <!-- we haven't upgraded to Java 11 -->
             </modules>
 
         </profile>
@@ -1395,13 +1332,47 @@
                 <module>jhipster</module>
                 <module>jws</module>
 
-                <module>libraries</module> &lt;!&ndash; very long running &ndash;&gt;
+                <module>libraries</module> <!-- very long running -->
+                <module>libraries-4</module>
+                <module>libraries-5</module>
+                <module>libraries-6</module>
 
                 <module>vaadin</module>
                 <module>vavr</module>
+                <module>vavr-2</module>
             </modules>
 
-        </profile>-->
+        </profile>
+
+        <profile>
+            <id>live-all</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/SpringContextTest.java</exclude>
+                                <exclude>**/*UnitTest.java</exclude>
+                                <exclude>**/*IntegrationTest.java</exclude>
+                                <exclude>**/*IntTest.java</exclude>
+                                <exclude>**/*LongRunningUnitTest.java</exclude>
+                                <exclude>**/*ManualTest.java</exclude>
+                                <exclude>**/*JdbcTest.java</exclude>
+                            </excludes>
+                            <includes>
+                                <include>**/*LiveTest.java</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+
+        </profile>
 
     </profiles>
 
@@ -1450,7 +1421,7 @@
         <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
         <commons-io.version>2.5</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
-        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
         <commons-cli.version>1.4</commons-cli.version>
         <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
@@ -1461,17 +1432,16 @@
         <jackson.version>2.9.8</jackson.version>
         <commons-fileupload.version>1.3</commons-fileupload.version>
         <junit-platform.version>1.2.0</junit-platform.version>
-        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <junit-jupiter.version>5.2.0</junit-jupiter.version>
         <directory-maven-plugin.version>0.3.1</directory-maven-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <custom-pmd.version>0.0.1</custom-pmd.version>
+        <custom-pmd.version>1.0.0</custom-pmd.version>
         <gitflow-incremental-builder.version>3.8</gitflow-incremental-builder.version>
         <maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
         <!-- <maven-pmd-plugin.version>3.9.0</maven-pmd-plugin.version> -->
         <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
         <lombok.version>1.18.8</lombok.version>
-        <h2.version>1.4.200</h2.version>
-        <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>
+        <h2.version>1.4.197</h2.version>
     </properties>
 
 </project>

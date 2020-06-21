@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Baeldung - Spring JNA JNDI</title>
+    <title>Tom - Spring JNA JNDI</title>
 </head>
 <body>
 <c:forEach var="foo" items="${foos}">

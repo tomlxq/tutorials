@@ -10,6 +10,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.IntStream;
 
 import static org.hamcrest.Matchers.hasItems;
@@ -22,7 +23,7 @@ import static org.junit.Assert.assertThat;
  * @date 2020/2/26
  */
 @Slf4j
-public class WordTest {
+public class WordUnitTest {
     Hashtable<Word, String> table = new Hashtable<>();
 
     @Test
@@ -118,7 +119,9 @@ public class WordTest {
 
     @Test
     public void remove_before_java8() {
-        if (table.get(new Word("cat")).equals("an animal")) {
+
+        String cat = table.get(new Word("cat"));
+        if (Objects.nonNull(cat) && cat.equals("an animal")) {
             table.remove(new Word("cat"));
         }
     }

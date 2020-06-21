@@ -13,7 +13,7 @@ import java.util.ListIterator;
  * @author TomLuo
  * @date 2020/3/8
  */
-public class IteratorGuideTest {
+public class IteratorGuideUnitTest {
     List<String> items = new ArrayList<>(List.of("one", "two", "three"));
 
     @Test
