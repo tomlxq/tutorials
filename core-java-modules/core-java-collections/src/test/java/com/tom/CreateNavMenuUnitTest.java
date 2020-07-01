@@ -37,10 +37,10 @@ public class CreateNavMenuUnitTest {
 
         //final List<String> back_to_basics = List.of("Spring Boot", "Boot Basics");
         //String filename = "1.Spring Boot教程–引导一个简单的应用程序";
-        final List<String> back_to_basics = List.of("Spring Tutorial", "Basics of Spring/Spring Exceptions/Spring Data Exceptions");
+        final List<String> back_to_basics = List.of("Spring Tutorial", "Basics of Spring/Spring Exceptions/Spring Security Exceptions");
         //final List<String> back_to_basics = List.of("Spring Tutorial", "REST with Spring Tutorial/REST API Advanced Topics");
         // final List<String> back_to_basics = List.of("Spring Tutorial", "Spring Persistence-SQL/The DAO");
-        String filename = "1.Spring DataIntegrityViolationException";
+        String filename = "1.没有定义名为“ springSecurityFilterChain”的bean";
 
 
         initFile(back_to_basics, filename);

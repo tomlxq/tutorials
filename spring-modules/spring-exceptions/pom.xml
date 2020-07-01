@@ -8,9 +8,10 @@
     <packaging>war</packaging>
 
     <parent>
-        <groupId>com.tom</groupId>
-        <artifactId>parent-modules</artifactId>
+        <groupId>com.tom.spring-modules</groupId>
+        <artifactId>spring-modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../</relativePath>
     </parent>
 
     <dependencies>
@@ -68,6 +69,12 @@
             <version>${mysql-connector-java.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <!--   <dependency>
+               <groupId>com.h2database</groupId>
+               <artifactId>h2</artifactId>
+               <scope>runtime</scope>
+               <version>1.4.200</version>
+           </dependency>-->
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-dbcp</artifactId>

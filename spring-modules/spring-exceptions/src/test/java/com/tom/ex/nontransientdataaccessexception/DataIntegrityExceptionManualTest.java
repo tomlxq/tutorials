@@ -19,6 +19,7 @@ import javax.sql.DataSource;
 @ContextConfiguration(classes = {Cause1NonTransientConfig.class}, loader = AnnotationConfigContextLoader.class)
 public class DataIntegrityExceptionManualTest {
 
+
     @Autowired
     private IFooService fooService;
 

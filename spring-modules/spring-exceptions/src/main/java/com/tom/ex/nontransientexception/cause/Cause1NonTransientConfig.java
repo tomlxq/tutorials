@@ -47,6 +47,13 @@ public class Cause1NonTransientConfig {
         dataSource.setUsername(Preconditions.checkNotNull(env.getProperty("jdbc.user")));
         dataSource.setPassword(Preconditions.checkNotNull(env.getProperty("jdbc.pass")));
 
+         /*  return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.DERBY)
+                   .setScriptEncoding("UTF-8")
+                .ignoreFailedDrops(true).
+                   addScript("classpath:jdbc/schema.sql")
+
+                   .build();*/
+
         return dataSource;
     }
 

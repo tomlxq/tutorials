@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-        xmlns="http://maven.apache.org/POM/4.0.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://maven.apache.org/POM/4.0.0"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>parent-boot-2</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>../persistence-modules/spring-boot-persistence</module>
-    </modules>
     <name>parent-boot-2</name>
     <packaging>pom</packaging>
     <description>Parent for all Spring Boot 2 modules</description>
+
     <parent>
         <groupId>com.tom</groupId>
         <artifactId>parent-modules</artifactId>
@@ -82,8 +80,9 @@
     <properties>
         <rest-assured.version>3.3.0</rest-assured.version>
         <!-- plugins -->
-        <thin.version>1.0.9.RELEASE</thin.version>
+        <thin.version>1.0.22.RELEASE</thin.version>
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        <aspectjweaver.version>1.9.1</aspectjweaver.version>
     </properties>
 
 </project>
