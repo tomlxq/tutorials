@@ -2,6 +2,7 @@ package com.tom.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.annotation.Schedules;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,4 +30,11 @@ public class Driver {
     public void checkVehicle() {
     }
 
+    @Schedules({
+            @Scheduled(fixedRate = 10000),
+            @Scheduled(cron = "0 * * * * MON-FRI")
+    })
+    void checkVehicle2() {
+        // ...
+    }
 }
