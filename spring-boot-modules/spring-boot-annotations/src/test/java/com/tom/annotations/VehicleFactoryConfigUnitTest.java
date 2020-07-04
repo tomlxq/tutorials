@@ -19,7 +19,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {VehicleFactoryConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Slf4j
-public class VehicleFactoryConfigTest {
+public class VehicleFactoryConfigUnitTest {
     @Autowired
     Engine engine;
 

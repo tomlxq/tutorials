@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>libraries</artifactId>
     <name>libraries</name>
-   <!-- <modules>
-        <module>jctools</module>
-    </modules>-->
+    <modules>
+        <module>custom-pmd</module>
+    </modules>
     <packaging>pom</packaging>
     <parent>
         <groupId>com.tom</groupId>
