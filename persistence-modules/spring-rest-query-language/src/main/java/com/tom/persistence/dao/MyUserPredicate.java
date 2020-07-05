@@ -6,14 +6,13 @@ import com.querydsl.core.types.dsl.PathBuilder;
 import com.querydsl.core.types.dsl.StringPath;
 import com.tom.persistence.model.MyUser;
 import com.tom.web.util.SearchCriteria;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
+@AllArgsConstructor
 public class MyUserPredicate {
-
     private SearchCriteria criteria;
-
-    public MyUserPredicate(final SearchCriteria criteria) {
-        this.criteria = criteria;
-    }
 
     public static boolean isNumeric(final String str) {
         try {
@@ -45,13 +44,5 @@ public class MyUserPredicate {
             }
         }
         return null;
-    }
-
-    public SearchCriteria getCriteria() {
-        return criteria;
-    }
-
-    public void setCriteria(final SearchCriteria criteria) {
-        this.criteria = criteria;
     }
 }

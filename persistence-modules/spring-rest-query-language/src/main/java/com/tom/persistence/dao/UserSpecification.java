@@ -2,6 +2,8 @@ package com.tom.persistence.dao;
 
 import com.tom.persistence.model.User;
 import com.tom.web.util.SpecSearchCriteria;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -9,18 +11,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+@AllArgsConstructor
+@Getter
 public class UserSpecification implements Specification<User> {
-
     private SpecSearchCriteria criteria;
-
-    public UserSpecification(final SpecSearchCriteria criteria) {
-        super();
-        this.criteria = criteria;
-    }
-
-    public SpecSearchCriteria getCriteria() {
-        return criteria;
-    }
 
     @Override
     public Predicate toPredicate(final Root<User> root, final CriteriaQuery<?> query, final CriteriaBuilder builder) {
@@ -45,5 +39,4 @@ public class UserSpecification implements Specification<User> {
                 return null;
         }
     }
-
 }

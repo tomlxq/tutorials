@@ -1,5 +1,10 @@
 package com.tom.web.util;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class SpecSearchCriteria {
 
     private String key;
@@ -7,9 +12,6 @@ public class SpecSearchCriteria {
     private Object value;
     private boolean orPredicate;
 
-    public SpecSearchCriteria() {
-
-    }
 
     public SpecSearchCriteria(final String key, final SearchOperation operation, final Object value) {
         super();
@@ -45,38 +47,6 @@ public class SpecSearchCriteria {
         this.key = key;
         this.operation = op;
         this.value = value;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(final String key) {
-        this.key = key;
-    }
-
-    public SearchOperation getOperation() {
-        return operation;
-    }
-
-    public void setOperation(final SearchOperation operation) {
-        this.operation = operation;
-    }
-
-    public Object getValue() {
-        return value;
-    }
-
-    public void setValue(final Object value) {
-        this.value = value;
-    }
-
-    public boolean isOrPredicate() {
-        return orPredicate;
-    }
-
-    public void setOrPredicate(boolean orPredicate) {
-        this.orPredicate = orPredicate;
     }
 
 }

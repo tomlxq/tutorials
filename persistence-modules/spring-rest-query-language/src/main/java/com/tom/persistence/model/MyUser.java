@@ -25,8 +25,6 @@ public class MyUser {
     private String email;
 
     private int age;
-
-
     public MyUser(final String firstName, final String lastName, final String email, final int age) {
         super();
         this.firstName = firstName;
@@ -34,6 +32,4 @@ public class MyUser {
         this.email = email;
         this.age = age;
     }
-
-
 }
