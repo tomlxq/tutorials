@@ -147,7 +147,7 @@
         <javax.el-api.version>2.2.5</javax.el-api.version>
 
         <!-- util -->
-        <guava.version>21.0</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <assertj.version>3.8.0</assertj.version>
     </properties>
 

@@ -139,7 +139,7 @@
         <hsqldb.version>2.3.4</hsqldb.version>
 
         <!-- util -->
-        <guava.version>21.0</guava.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
 
 </project>

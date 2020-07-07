@@ -1,5 +1,6 @@
 package com.tom.resttemplate;
 
+import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import java.io.File;
 import java.io.FileOutputStream;
 
+@Slf4j
 public class LargeFileDownloadIntegrationTest {
 
     static String FILE_URL = "http://ovh.net/files/1Mio.dat";
@@ -26,6 +28,7 @@ public class LargeFileDownloadIntegrationTest {
     @Test
     public void givenResumableUrl_whenUrlCalledByHeadOption_thenExpectHeadersAvailable() {
         HttpHeaders headers = restTemplate.headForHeaders(FILE_URL);
+        log.info("{}", headers);
         Assertions
                 .assertThat(headers.get("Accept-Ranges"))
                 .contains("bytes");
@@ -45,9 +48,7 @@ public class LargeFileDownloadIntegrationTest {
         });
 
         Assert.assertNotNull(file);
-        Assertions
-                .assertThat(file.length())
-                .isEqualTo(contentLength);
+        Assertions.assertThat(file.length()).isEqualTo(contentLength);
     }
 
     @Test
@@ -62,9 +63,7 @@ public class LargeFileDownloadIntegrationTest {
         });
 
         Assert.assertNotNull(file);
-        Assertions
-                .assertThat(file.length())
-                .isLessThanOrEqualTo(range);
+        Assertions.assertThat(file.length()).isLessThanOrEqualTo(range);
     }
 
     @Test

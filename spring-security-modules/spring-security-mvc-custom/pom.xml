@@ -192,7 +192,7 @@
 
     <properties>
         <!-- util -->
-        <guava.version>19.0</guava.version>
+        <guava.version>29.0-jre</guava.version>
 
         <!-- Maven plugins -->
         <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>

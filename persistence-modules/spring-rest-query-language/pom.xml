@@ -350,7 +350,7 @@
         <xml-apis.version>1.4.01</xml-apis.version>
 
         <!-- util -->
-        <guava.version>19.0</guava.version>
+        <guava.version>29.0-jre</guava.version>
 
         <!-- Maven plugins -->
         <cargo-maven2-plugin.version>1.7.0</cargo-maven2-plugin.version>

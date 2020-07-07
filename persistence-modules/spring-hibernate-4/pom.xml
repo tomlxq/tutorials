@@ -155,7 +155,7 @@
         <javax.el-api.version>2.2.5</javax.el-api.version>
 
         <!-- util -->
-        <guava.version>19.0</guava.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
 
 </project>
