@@ -1,5 +1,6 @@
 package com.tom.web.upload.client;
 
+import org.junit.Test;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpEntity;
@@ -14,9 +15,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class MultipartFileUploadClient {
+/**
+ * 功能描述
+ *
+ * @author TomLuo
+ * @date 2020/7/6
+ */
+public class MultipartFileUploadClientUnitTest {
 
-    public static void main(String[] args) throws IOException {
+    @Test
+    public void testUpload() throws IOException {
         uploadSingleFile();
         uploadMultipleFile();
     }

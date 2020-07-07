@@ -34,13 +34,13 @@ public class CreateNavMenuUnitTest {
         //String filename = "4.Spring with Maven";
         //final List<String> back_to_basics = List.of("Spring MVC Guides", "Basic Concepts in Spring MVC");
         //String filename = "9.Spring Security with Maven";
-
+        final List<String> back_to_basics = List.of("Back to Basics", "Core Java Language Concepts");
         //final List<String> back_to_basics = List.of("Spring Boot", "Boot Basics");
         //String filename = "1.Spring Boot教程–引导一个简单的应用程序";
         //final List<String> back_to_basics = List.of("Spring Tutorial", "Basics of Spring/Spring Exceptions/Spring Security Exceptions");
-        final List<String> back_to_basics = List.of("Spring Tutorial", "REST with Spring Tutorial/REST API Advanced Topics/REST Query Language Basics");
+        //final List<String> back_to_basics = List.of("Spring Tutorial", "REST with Spring Tutorial/REST API Advanced Topics/REST Query Language Basics");
         // final List<String> back_to_basics = List.of("Spring Tutorial", "Spring Persistence-SQL/The DAO");
-        String filename = "1.具有Spring和JPA标准的REST查询语言";
+        String filename = "1.Java – Try with Resources";
 
 
         initFile(back_to_basics, filename);
