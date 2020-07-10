@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author TomLuo
  * @date 2020/5/16
  */
-public class ThreadATest {
+public class ThreadAUnitTest {
     @Test
     public void name() throws InterruptedException {
         ThreadA threadA = new ThreadA();

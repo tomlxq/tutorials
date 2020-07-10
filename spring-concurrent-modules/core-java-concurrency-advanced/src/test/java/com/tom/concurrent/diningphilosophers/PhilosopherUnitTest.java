@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author TomLuo
  * @date 2020/5/17
  */
-public class PhilosopherTest {
+public class PhilosopherUnitTest {
     @Test
     public void testPhilosopher_dead_lock() {
         Philosopher[] philosophers = new Philosopher[5];

@@ -1442,6 +1442,6 @@
         <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
         <lombok.version>1.18.8</lombok.version>
         <h2.version>1.4.197</h2.version>
+        <cargo-maven2-plugin.version>1.7.11</cargo-maven2-plugin.version>
     </properties>
-
 </project>

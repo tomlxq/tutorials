@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author TomLuo
  * @date 2020/5/17
  */
-public class CyclicBarrierDemoTest {
+public class CyclicBarrierDemoUnitUnitTest {
     @Test
     public void testCyclicBarrier() {
         CyclicBarrierDemo play = new CyclicBarrierDemo();

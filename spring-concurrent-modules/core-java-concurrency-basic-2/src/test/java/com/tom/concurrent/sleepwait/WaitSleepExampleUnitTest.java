@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author TomLuo
  * @date 2020/5/16
  */
-public class WaitSleepExampleTest {
+public class WaitSleepExampleUnitTest {
     @Test
     public void testWaitAndSleep() throws InterruptedException {
         WaitSleepExample.sleepWaitInSynchronizedBlocks();

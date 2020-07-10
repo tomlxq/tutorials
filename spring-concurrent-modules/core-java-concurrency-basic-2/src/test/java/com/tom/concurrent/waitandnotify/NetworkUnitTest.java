@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author TomLuo
  * @date 2020/5/15
  */
-public class NetworkTest {
+public class NetworkUnitTest {
     @Test
     public void givenSenderAndReceiverd() throws InterruptedException {
         Data data = new Data();

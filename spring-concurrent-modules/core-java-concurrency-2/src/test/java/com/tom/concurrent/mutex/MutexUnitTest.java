@@ -1,6 +1,7 @@
 package com.tom.concurrent.mutex;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class MutexUnitTest {
 
     @Test
+    @Ignore
     // This test verifies the race condition use case, it may pass or fail based on execution environment
     // Uncomment @Test to run it
     public void givenUnsafeSequenceGenerator_whenRaceCondition_thenUnexpectedBehavior() throws Exception {
