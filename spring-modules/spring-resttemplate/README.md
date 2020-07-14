@@ -2,9 +2,6 @@
 
 This module contains articles about Spring RestTemplate
 
-### The Course
-The "REST With Spring" Classes: http://bit.ly/restwithspring
-
 ### Relevant Articles:
 - [The Guide to RestTemplate](https://www.tom.com/rest-template)
 - [Exploring the Spring Boot TestRestTemplate](https://www.tom.com/spring-boot-testresttemplate)

@@ -2,9 +2,6 @@
 
 This module contains articles about HTTP in REST APIs with Spring
 
-### The Course
-The "REST With Spring" Classes: http://bit.ly/restwithspring
-
 ### Relevant Articles:
 
 - [Guide to UriComponentsBuilder in Spring](https://github.com/tomlxq/tutorials/spring-uricomponentsbuilder)

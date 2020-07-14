@@ -2,10 +2,6 @@
 
 This module contains articles about Jackson.
 
-### The Course
-
-The "REST With Spring" Classes: http://bit.ly/restwithspring
-
 ### Relevant Articles: 
 - [Using Optional with Jackson](https://github.com/tomlxq/tutorials/jackson-optional)
 - [Compare Two JSON Objects with Jackson](https://github.com/tomlxq/tutorials/jackson-compare-two-json-objects)

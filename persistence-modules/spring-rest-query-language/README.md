@@ -2,12 +2,6 @@
 
 This module contains articles about the REST query language with Spring
 
-### Courses
-
-The "REST With Spring" Classes: http://bit.ly/restwithspring
-
-The "Learn Spring Security" Classes: http://github.learnspringsecurity.com
-
 ### Relevant Articles: 
 
 - [REST Query Language with Spring and JPA Criteria](https://www.tom.com/rest-search-language-spring-jpa-criteria)
