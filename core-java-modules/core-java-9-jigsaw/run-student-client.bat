@@ -1,0 +1,1 @@
+java --module-path mods -m com.tom.student.client/com.tom.student.client.StudentClient
