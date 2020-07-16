@@ -14,9 +14,9 @@
     </parent>
 
     <modules>
-
         <module>spring-boot-actuator</module>
         <module>spring-5-reactive</module>
+        <module>spring-5-reactive-2</module>
     </modules>
     <dependencies>
 
