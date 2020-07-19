@@ -2,10 +2,6 @@
 
 This module contains articles about basic authentication in RESTful APIs with Spring Security
 
-### The Course
-
-The "Learn Spring Security" Classes: http://github.learnspringsecurity.com
-
 ### Relevant Articles: 
 
 - [Basic Authentication with the RestTemplate](https://www.tom.com/how-to-use-resttemplate-with-basic-authentication-in-spring)
