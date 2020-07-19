@@ -157,3 +157,16 @@ public class FormServletLiveTest {
     }
 }
 ```
+
+## 6. Servlet，HttpServlet和JSP
+重要的是要了解Servlet技术不限于HTTP协议。
+
+实际上，它几乎总是这样，但是[Servlet](https://docs.oracle.com/javaee/7/api/javax/servlet/Servlet.html)是通用接口，而[HttpServlet](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html)是该接口的扩展-添加了HTTP特定的支持-如doGet和doPost等。
+
+
+最后，Servlet技术还是许多其他Web技术（例如JSP – JavaServer Pages，Spring MVC等）的主要驱动力。
+
+## 7. 结论
+在这篇快速文章中，我们介绍了Java Web应用程序中Servlet的基础。
+
+该示例项目可以作为[GitHub项目](https://github.com/tomlxq/tutorials/tree/master/core-java-modules/javax-servlets)直接下载并运行。
