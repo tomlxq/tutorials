@@ -1,0 +1,13 @@
+package com.tom.web.dto;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
+@XmlRootElement
+public class Bar implements Serializable {
+
+    public Bar() {
+        super();
+    }
+
+}
