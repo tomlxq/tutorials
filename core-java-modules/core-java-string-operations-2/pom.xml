@@ -73,7 +73,7 @@
         <validation-api.version>2.0.0.Final</validation-api.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <guava.version>27.0.1-jre</guava.version>
-        <hibernate-validator.version>6.0.2.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
         <javax.el-api.version>3.0.0</javax.el-api.version>
         <javax.el.version>2.2.6</javax.el.version>
     </properties>
